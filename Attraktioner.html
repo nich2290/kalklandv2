@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="DA">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Attraktioner</title>
+</head>
+<style>
+    /*| Navigation |*/
+
+    nav {
+        position: static;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        box-shadow: 0 3px 10px -2px rgba(0, 0, 0, .1);
+        border: 1px solid rgba(0, 0, 0, .1);
+    }
+
+
+
+
+/*********** MOBIL VERSION *****************/
+    @media only screen and (max-width: 667px){
+
+
+     .middle {
+        transition: .5s ease;
+        opacity: 0;
+        position: absolute;
+
+
+
+
+    }
+        .contentwrapper {
+    width: 100%;
+    height: 10vh;
+    background-color: #e76126;
+
+
+
+}
+    .fort {
+        top: 125vw;
+        left: 50vw;
+    }
+    .klint {
+        top: 275vw;
+        left: 50vw;
+    }
+    .faxe {
+        top: 385vw;
+        left: 50vw;
+    }
+        .skjul {
+            display: none;
+        }
+    .middle img{
+        width: 40vw;
+    }
+    .attraktion1 .image {
+        opacity: 1;
+
+    }
+
+    .attraktion1 .middle {
+        opacity: 1;
+    }
+
+    .attraktion2 .image {
+        opacity: 1;
+    }
+
+    .attraktion2 .middle {
+        opacity: 1;
+    }
+
+    .attraktion3 .image {
+        opacity: 1;
+    }
+
+    .attraktion3 .middle {
+        opacity: 1;
+    }
+
+    .middle {
+        cursor: pointer;
+    }
+
+    .text {
+
+        color: white;
+        font-size: 37px;
+
+    }
+
+    a {
+        text-decoration: none;
+    }
+        }
+    /************ TABLET ***********/
+    @media only screen and (min-width: 667px){
+
+
+    }
+    /*********** DESKTOP START ***********/
+
+    @media only screen and (min-width: 1024px){
+
+
+
+        #attraktioner {
+        display: grid;
+        width: 100%;
+        height: 50vh;
+
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+        .contentwrapper {
+            position: fixed;
+        }
+
+    .attraktion1 img {
+        width: 100%;
+        z-index: -10;
+
+    }
+        .attraktion1 {
+            margin-right: 10px;
+        }
+
+    .attraktion2 img {
+        width: 100%;
+        z-index: -10;
+    }
+
+    .attraktion3 img {
+        width: 100%;
+        z-index: -10;
+
+    }
+        .skjul2 {
+            display: none;
+        }
+
+    /******** OVERLAY*********/
+    .attraktion1 {
+        position: relative;
+        width: 99%;
+
+    }
+
+    .attraktion2 {
+        position: relative;
+        width: 99%;
+
+    }
+
+    .attraktion3 {
+        position: relative;
+        width: 100%;
+    }
+
+    .image {
+        opacity: 1;
+        display: block;
+        width: 100%;
+        height: auto;
+        transition: .5s ease;
+        backface-visibility: hidden;
+    }
+
+    .middle {
+        transition: .5s ease;
+        opacity: 0;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        text-align: center;
+    }
+    .middle img{
+        width: 20vw;
+    }
+    .attraktion1:hover .image {
+        opacity: 0;
+
+    }
+
+    .attraktion1:hover .middle {
+        opacity: 1;
+    }
+
+    .attraktion2:hover .image {
+        opacity: 0;
+    }
+
+    .attraktion2:hover .middle {
+        opacity: 1;
+    }
+
+    .attraktion3:hover .image {
+        opacity: 0;
+    }
+
+    .attraktion3:hover .middle {
+        opacity: 1;
+    }
+
+    .middle {
+        cursor: pointer;
+    }
+
+    .text {
+
+        color: white;
+        font-size: 37px;
+
+    }
+
+    a {
+        text-decoration: none;
+    }
+}
+
+
+
+
+</style>
+
+<body>
+    <header>
+        <nav role='navigation'>
+            <a href="index.html"><img src="img/SVG/Artboard%2010.svg"></a>
+            <div id="menuToggle">
+                <!-- Skjult checkbox = click reciever-->
+                <input type="checkbox" />
+
+                <!--Spans fungerer som hamburger-->
+                <span class="hover"></span>
+                <span class="hover"></span>
+                <span class="hover"></span>
+
+
+                <ul id="menu">
+                    <li><a href="index.html">Forside</a></li>
+                    <li><a href="Attraktioner.html">Attraktioner</a></li>
+                    <li><a href="aktuelt.html">Aktuelt</a></li>
+                    <li><a href="om-os.html">Om os</a></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+
+                </ul>
+            </div>
+
+
+
+            <ul class="pc-menu">
+                <li><a href="index.html">Forside</a></li>
+                <li><a href="Attraktioner.html">Attraktioner</a>
+
+                </li>
+                <li><a href="aktuelt.html">Aktuelt</a></li>
+                <li><a href="om-os.html">Om os</a></li>
+                <li><a href="kontakt.html" class="kontaktnav">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <div id="attraktioner">
+            <div class="attraktion1">
+                <img src="img/stevns_fort.jpg" alt="Stevns fort" class="image" style="width:100%">
+                <div class="middle fort">
+                    <a href="stevns-fort.html">
+                        <img class="skjul" src="img/SVG/fortstevns.svg">
+                        <img class="skjul2"src="img/mobilimg/fort.png">
+
+                    </a>
+                </div>
+            </div>
+            <div class="attraktion2">
+                <img src="img/stenvs_klint.jpg" alt="Stevns klint" class="image" style="width:100%">
+                <div class="middle klint">
+                   <a href="stevns-klint.html">
+                    <img class="skjul" src="img/SVG/klintstevns.svg">
+                    <img class="skjul2"src="img/mobilimg/klint.png">
+                    </a>
+                </div>
+
+            </div>
+            <div class="attraktion3">
+                <img src="img/geomuseum_faxe.jpg" alt="Geomuseum Faxe" class="image" style="width:100%">
+                <div class="middle faxe">
+                   <a href="geomuseum.html">
+                    <img class="skjul" src="img/SVG/faxemuseum.svg">
+                    <img class="skjul2"src="img/mobilimg/Geomuseum.png">
+                    </a>
+                </div>
+
+            </div>
+        </div>
+        <!-- The video -->
+</section>
+
+                <footer class="contentwrapper">
+        <div class="social"><a href="YOUR FACEBOOK URL">
+<img src="img/1x/Artboard%203%20copy%202.png">
+</a>
+<a href="YOUR INSTAGRAM URL">
+<img src="img/1x/Artboard%203%20copy.png">
+</a>
+<a href="YOUR TWITTER URL">
+<img src="img/1x/Artboard%203.png">
+</a>
+
+
+</div>
+
+
+    </footer>
+
+
+
+
+
+
+
+    <script>
+
+
+
+
+
+    </script>
+</body>
+
+</html>

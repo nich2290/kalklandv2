@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="DA">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Koldkrigsmuseum Stevnsfort</title>
+</head>
+<style>
+
+    #splash {
+        height: 60vw;
+        background-image: url(img/splashimg/Stevns_Fort_1080.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+
+    }
+
+
+
+        }
+    #mainwrap {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+
+    }
+    .column_left{
+       grid-column: 1;
+        grid-row: 1;
+        padding: 0 1.5rem 0 1.5rem;
+
+
+    }
+    .column_right {
+        grid-column: 1;
+        grid-row: 2;
+        max-width: 400px;
+        padding: 0 1.5rem 0 1.5rem;
+    }
+    #mainwrap img{
+        max-height: 520px;
+    }
+
+
+    .contentwrapper {
+        position: static;
+        height: 10vh;
+
+
+    }
+    @media only screen and (min-width: 667px){
+
+
+
+
+
+
+
+    }
+    @media only screen and (min-width: 1024px){
+        #splash {
+            height: 30vw;
+        }
+
+        #mainwrap {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr;
+            margin: 0 5rem 0 5rem;
+        }
+        #mainwrap img{
+            max-height: 600px;
+        }
+        .contentwrapper {
+            height: 10vh;
+        }
+        .column_left{
+            grid-column: 1;
+            grid-row: 1;
+
+        }
+        .column_right {
+           grid-column: 2;
+            grid-row: 1;
+        }
+
+
+
+    }
+
+
+
+
+
+
+
+</style>
+
+<body>
+    <header>
+        <nav role='navigation'>
+            <a href="index.html"><img src="img/SVG/Artboard%2010.svg"></a>
+            <div id="menuToggle">
+                <!-- Skjult checkbox = click reciever-->
+                <input type="checkbox" />
+
+                <!--Spans fungerer som hamburger-->
+                <span class="hover"></span>
+                <span class="hover"></span>
+                <span class="hover"></span>
+
+
+                <ul id="menu">
+                    <li><a href="index.html">Forside</a></li>
+                    <li><a href="Attraktioner.html">Attraktioner</a></li>
+                    <li><a href="aktuelt.html">Aktuelt</a></li>
+                    <li><a href="om-os.html">Om os</a></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+
+                </ul>
+            </div>
+
+
+
+            <ul class="pc-menu">
+                <li><a href="index.html">Forside</a></li>
+                <li><a href="Attraktioner.html">Attraktioner</a>
+
+                </li>
+                <li><a href="aktuelt.html">Aktuelt</a></li>
+                <li><a href="om-os.html">Om os</a></li>
+                <li><a href="kontakt.html" class="kontaktnav">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Her starter indhold -->
+    <section id="splash">
+
+</section>
+    <section id="main">
+       <h1>Koldkrigsmuseum Stevnsfort</h1>
+        <div id="mainwrap">
+
+            <div class="column_left">
+                <img src="img/granat_stevnsfort.jpg">
+            </div>
+
+            <div class="column_right">
+                <h4>Den Kolde Krig påvirkede enhver, der levede i perioden. På Koldkrigsmuseum Stevnsfort minder vi dig om en historie, som du måske kan huske, men slet ikke kender.</h4>
+                <p>Under Den Kolde Krig var Stevnsfort en brik i Danmarks og NATO’s forsvar. Halvøen Stevns ville ligge i allerforreste frontlinje, hvis der udbrød krig mellem øst og vest. Derfor byggede man Stevnsfort, og i 40 år var man her døgnet rundt klar til krig.</p><br>
+                <p>I dag kan du på en guidet tur opleve det underjordiske fort, som det så ud dengang, da krigen var tættest på. Ethvert besøg på fortet er en ny og særlig oplevelse. I selskab med en af museets 20 engagerede og forskellige guider får du nærværende og levende fortællinger om den allestedsnærværende krig i en unik og autentisk ramme. </p>
+            </div>
+
+        </div>
+
+
+    </section>
+
+    <!--- HER STARTER FOOTER -->
+
+              <footer class="contentwrapper">
+        <div class="social"><a href="YOUR FACEBOOK URL">
+<img src="img/1x/Artboard%203%20copy%202.png">
+</a>
+<a href="YOUR INSTAGRAM URL">
+<img src="img/1x/Artboard%203%20copy.png">
+</a>
+<a href="YOUR TWITTER URL">
+<img src="img/1x/Artboard%203.png">
+</a>
+
+
+</div>
+
+
+    </footer>
+
+
+
+
+
+
+
+    <script>
+        let indhold;
+        document.addEventListener("DOMContentLoaded", hentJson);
+        //Hent JSON fil i asynkron function
+
+        async function hentJson() {
+            console.log("Henter json");
+            // const url = "http://nicklasgrafisk.dk/kea/07-CMS/sushiwp/wordpress/wp-json/wp/v2/pages/20";
+            // Henter data filen
+            const myJson = await fetch(url);
+            // den hentede data skal tolkes som json
+            indhold = await myJson.json();
+            //Kald funktion der viser data i DOM
+            visIndhold();
+
+            //Henter indholdet
+        }
+
+        function visIndhold() {
+            console.log("Viser indhold");
+            document.querySelector(".overskrift").innerHTML = indhold.title.rendered;
+            document.querySelector(".indhold").innerHTML = indhold.content.rendered;
+            // Viser indholdet
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="DA">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Kontakt</title>
+</head>
+<style>
+    /***************MOBIL*************/
+     .kontakt-overskrift {
+        margin-top: 7vw;
+        margin-left: 10vw;
+    }
+    .kontakt-indhold {
+        margin-left: 10vw;
+    }
+ #splash {
+        height:60vw;
+        background-image: url(img/splashimg/splash_kontaktos.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position:center bottom;
+
+    }
+    .contentwrapper {
+        position: absolute;
+        bottom: 0;
+    }
+
+
+
+
+
+    /*****************DESKTOP***************/
+    @media only screen and (min-width: 1024px){
+    .kontakt-overskrift {
+        margin-top: 7vw;
+        margin-left: 10vw;
+    }
+    .kontakt-indhold {
+        margin-left: 10vw;
+    }
+ #splash {
+        height:30vw;
+        background-image: url(img/splashimg/splash_kontaktos.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: bottom right;
+
+    }
+        .contentwrapper {
+
+        }
+
+}
+
+    /*****************TABLET***************/
+ @media only screen and (min-width: 667px){
+    .kontakt-overskrift {
+        margin-top: 7vw;
+        margin-left: 10vw;
+    }
+    .kontakt-indhold {
+        margin-left: 10vw;
+        margin-bottom: 5vw;
+    }
+ #splash {
+        height:30vw;
+        background-image: url(img/splashimg/splash_kontaktos.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: bottom right;
+
+    }
+
+}
+
+</style>
+
+<body>
+    <!-- NAVIGATION -->
+    <header>
+        <nav role='navigation'>
+            <a href="index.html"><img src="img/SVG/Artboard%2010.svg"></a>
+            <div id="menuToggle">
+                <!-- Skjult checkbox = click reciever-->
+                <input type="checkbox" />
+
+                <!--Spans fungerer som hamburger-->
+                <span class="hover"></span>
+                <span class="hover"></span>
+                <span class="hover"></span>
+
+
+                <ul id="menu">
+                    <li><a href="index.html">Forside</a></li>
+                    <li><a href="Attraktioner.html">Attraktioner</a></li>
+                    <li><a href="aktuelt.html">Aktuelt</a></li>
+                    <li><a href="om-os.html">Om os</a></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+
+                </ul>
+            </div>
+
+
+
+            <ul class="pc-menu">
+                <li><a href="index.html">Forside</a></li>
+                <li><a href="Attraktioner.html">Attraktioner</a>
+
+                </li>
+                <li><a href="aktuelt.html">Aktuelt</a></li>
+                <li><a href="om-os.html">Om os</a></li>
+                <li><a href="kontakt.html" class="kontaktnav">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+<section id="splash">
+
+</section>
+    <!-- Her starter indhold -->
+    <h2 class="kontakt-overskrift"></h2>
+    <main class="kontakt-indhold">
+
+
+
+        <div class="kontakt-indhold1"></div>
+        <div class="kontakt-indhold2"></div>
+        <div class="kontakt-indhold3"></div>
+        <div class="kontakt-indhold4"></div>
+        <div class="kontakt-indhold5"></div>
+
+    </main>
+
+    <!--- HER STARTER FOOTER -->
+    <footer class="contentwrapper">
+        <div class="social"><a href="YOUR FACEBOOK URL">
+<img src="img/1x/Artboard%203%20copy%202.png">
+</a>
+<a href="YOUR INSTAGRAM URL">
+<img src="img/1x/Artboard%203%20copy.png">
+</a>
+<a href="YOUR TWITTER URL">
+<img src="img/1x/Artboard%203.png">
+</a>
+
+
+</div>
+
+
+    </footer>
+
+
+
+
+
+
+
+    <script>
+        let indhold;
+        document.addEventListener("DOMContentLoaded", hentJson);
+        //Hent JSON fil i asynkron function
+
+        async function hentJson() {
+            console.log("Henter json");
+            const url = "http://nicklasgrafisk.dk/kea/07-CMS/kalklandet/wordpress/wp-json/wp/v2/kontakt/32";
+            // Henter data filen
+            const myJson = await fetch(url);
+            // den hentede data skal tolkes som json
+            indhold = await myJson.json();
+            //Kald funktion der viser data i DOM
+            visIndhold();
+            console.log("indhold", indhold);
+
+            //Henter indholdet
+        }
+
+        function visIndhold() {
+            console.log("Viser indhold");
+            document.querySelector(".kontakt-overskrift").innerHTML = indhold.titel;
+            document.querySelector(".kontakt-indhold1").innerHTML = indhold.indhold1;
+            document.querySelector(".kontakt-indhold2").innerHTML = indhold.indhold2;
+            document.querySelector(".kontakt-indhold3").innerHTML = indhold.indhold3;
+            document.querySelector(".kontakt-indhold4").innerHTML = indhold.indhold4;
+            document.querySelector(".kontakt-indhold5").innerHTML = indhold.indhold5;
+            // Viser indholdet
+        }
+
+    </script>
+</body>
+
+</html>
