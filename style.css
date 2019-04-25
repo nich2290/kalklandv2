@@ -478,7 +478,9 @@ footer img {
     nav ul li:hover {
         background: rgba(0, 0, 0, .15);
     }
-
+    nav ul li:active {
+        background: rgba(0, 0, 0, .15);
+    }
     nav ul li:hover > ul {
         display: block;
     }
@@ -535,8 +537,8 @@ footer img {
     }
 
     .kontaktnav {
-        background-color: #e76126;
-        color: white;
+
+        color: #e76126;
     }
 
     .kontaktnav:hover {
