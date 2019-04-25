@@ -26,24 +26,27 @@
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr;
 
+
     }
     .column_left{
        grid-column: 1;
         grid-row: 1;
         padding: 0 1.5rem 0 1.5rem;
         margin-bottom: 2vh;
+    }
 
-
+    .column_left img {
+        width: 100%;
     }
     .column_right {
         grid-column: 1;
         grid-row: 2;
-        max-width: 400px;
+
         padding: 0 1.5rem 0 1.5rem;
 
     }
     #mainwrap img{
-        max-height: 520px;
+
     }
 
     @media only screen and (min-width: 667px){
@@ -66,9 +69,7 @@
             grid-template-rows: 1fr;
             margin: 0 5rem 0 5rem;
         }
-        #mainwrap img{
-            max-height: 600px;
-        }
+
 
         .column_left{
             grid-column: 1;
