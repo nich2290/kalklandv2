@@ -364,10 +364,6 @@ footer {
     grid-template-rows: 1fr;
 }
 
-footer img {
-    width: 100%;
-
-}
 
 .social {
     grid-column: 2;
@@ -437,7 +433,7 @@ footer img {
 
 /************ INDHOLD START *************/
 
-
+@media only screen and (min-width: 768px) {}
 
 
 
@@ -449,7 +445,12 @@ footer img {
 
 
 /************ FOOTER START *************/
+@media only screen and (min-width: 768px) {
+    footer img {
+        width: 15%;
 
+    }
+}
 
 
 
@@ -586,7 +587,7 @@ footer img {
 
 
     footer img {
-        width: 20%;
+        width: 10% !important;
 
     }
 
