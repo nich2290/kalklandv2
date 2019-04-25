@@ -371,12 +371,13 @@ footer img {
     grid-row: 1;
     align-self: center;
     text-align: center;
+
 }
 
 .social img {
     display: inline-block;
     margin: 0 0.5em;
-    width: 10%;
+    width: 20%;
 }
 
 .social a {
@@ -478,9 +479,11 @@ footer img {
     nav ul li:hover {
         background: rgba(0, 0, 0, .15);
     }
+
     nav ul li:active {
         background: rgba(0, 0, 0, .15);
     }
+
     nav ul li:hover > ul {
         display: block;
     }
@@ -579,6 +582,7 @@ footer img {
 
     .social img {
         padding-left: 1vw;
+        width: 10%;
     }
 
     .social a {
