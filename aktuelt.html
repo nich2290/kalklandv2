@@ -55,11 +55,13 @@
             }
             .indhold2 {
                 margin-left: 10vw;
+                margin-bottom: 2vh;
             }
             .overskrift {
                 text-align: center;
                 padding-bottom: 1rem;
             }
+
         }
 </style>
 
@@ -142,6 +144,7 @@
         async function hentJson() {
             console.log("Henter json");
              const url = "http://nicklasgrafisk.dk/kea/07-CMS/kalklandet/wordpress/wp-json/wp/v2/aktuelt/62";
+
             // Henter data filen
             const myJson = await fetch(url);
             // den hentede data skal tolkes som json
