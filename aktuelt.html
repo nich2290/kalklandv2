@@ -45,6 +45,21 @@
 
 
     }
+            #mainwrap {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr;
+            }
+            .indhold2 img{
+                width: 100%;
+            }
+            .indhold2 {
+                margin-left: 10vw;
+            }
+            .overskrift {
+                text-align: center;
+                padding-bottom: 1rem;
+            }
         }
 </style>
 
@@ -80,7 +95,7 @@
                 <li><a href="Attraktioner.html">Attraktioner</a>
 
                 </li>
-                <li><a href="aktuelt.html">Aktuelt</a></li>
+                <li><a class="current" href="aktuelt.html">Aktuelt</a></li>
                 <li><a href="om-os.html">Om os</a></li>
                 <li><a href="kontakt.html" class="kontaktnav">Kontakt</a></li>
             </ul>
@@ -91,7 +106,12 @@
     <!-- Her starter indhold -->
     <section id="splash"></section>
     <h2 class="overskrift"></h2>
-    <main class="indhold"></main>
+    <div id="mainwrap">
+    <div class="indhold2"></div>
+    <div class="indhold"></div>
+
+
+    </div>
 
     <!--- HER STARTER FOOTER -->
     <footer>
@@ -121,7 +141,7 @@
 
         async function hentJson() {
             console.log("Henter json");
-            // const url = "http://nicklasgrafisk.dk/kea/07-CMS/sushiwp/wordpress/wp-json/wp/v2/pages/20";
+             const url = "http://nicklasgrafisk.dk/kea/07-CMS/kalklandet/wordpress/wp-json/wp/v2/aktuelt/62";
             // Henter data filen
             const myJson = await fetch(url);
             // den hentede data skal tolkes som json
@@ -134,8 +154,9 @@
 
         function visIndhold() {
             console.log("Viser indhold");
-            document.querySelector(".overskrift").innerHTML = indhold.title.rendered;
-            document.querySelector(".indhold").innerHTML = indhold.content.rendered;
+            document.querySelector(".overskrift").innerHTML = indhold.titel;
+            document.querySelector(".indhold").innerHTML = indhold.indhold1;
+            document.querySelector(".indhold2").innerHTML += indhold.content.rendered;
             // Viser indholdet
         }
 

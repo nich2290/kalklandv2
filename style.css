@@ -464,6 +464,10 @@ footer img {
 
     }
 
+    nav .current{
+        background-color: #e6d5ab;
+    }
+
     nav ul {
         list-style: none;
         position: relative;
@@ -485,9 +489,7 @@ footer img {
         background: rgba(0, 0, 0, .15);
     }
 
-    nav ul li:active {
-        background: rgba(0, 0, 0, .15);
-    }
+
 
     nav ul li:hover > ul {
         display: block;
@@ -553,6 +555,9 @@ footer img {
         color: black;
     }
 
+
+
+
     header {
         z-index: 1;
     }
@@ -592,6 +597,14 @@ footer img {
 
     .social a {
         text-decoration: none;
+    }
+    .indhold {
+        margin-left: 10vw;
+        margin-right: 10vw;
+    }
+    .overskrift {
+        margin-top: 7vw;
+        margin-left: 10vw;
     }
 
 }
