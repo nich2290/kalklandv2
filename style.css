@@ -75,6 +75,9 @@ h1,
 h2 {
     color: #FE6400;
     font-family: 'limestonelight';
+    text-align: center;
+    padding: 1rem;
+    font-size: 2rem;
 
 }
 
@@ -107,7 +110,14 @@ h1 {
 
 /************ INDHOLD START *************/
 
+.indhold {
+    margin: 1em;
+}
 
+
+.indhold2 {
+    margin: 1em;
+}
 
 
 
@@ -376,7 +386,7 @@ footer {
 .social img {
     display: inline-block;
     margin: 0 0.5em;
-    width: 20%;
+    width: 19.4%;
 }
 
 .social a {
@@ -434,7 +444,16 @@ footer {
 
 /************ INDHOLD START *************/
 
-@media only screen and (min-width: 768px) {}
+@media only screen and (min-width: 768px) {
+    .indhold {
+        margin-left: 5vw;
+        margin-right: 5vw;
+    }
+
+    .indhold2 {
+        margin-left: 2vw;
+    }
+}
 
 
 
@@ -446,12 +465,7 @@ footer {
 
 
 /************ FOOTER START *************/
-@media only screen and (min-width: 768px) {
-    footer img {
-        width: 15%;
-
-    }
-}
+@media only screen and (min-width: 768px) {}
 
 
 
@@ -478,7 +492,7 @@ footer {
 
     }
 
-    nav .current{
+    nav .current {
         background-color: #e6d5ab;
     }
 
@@ -593,7 +607,7 @@ footer {
 
 
     footer img {
-        width: 10% !important;
+        width: 9% !important;
 
     }
 
@@ -612,10 +626,12 @@ footer {
     .social a {
         text-decoration: none;
     }
+
     .indhold {
-        margin-left: 10vw;
-        margin-right: 10vw;
+        margin-left: 5vw;
+        margin-right: 5vw;
     }
+
     .overskrift {
         margin-top: 1rem;
         margin-left: 10vw;
