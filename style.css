@@ -152,9 +152,6 @@ nav {
 }
 
 
-/* needed because hiding the menu on the right side is not perfect,  */
-
-
 a {
     text-decoration: none;
     color: #232323;
@@ -345,8 +342,9 @@ a {
 
 /********** ATTRAKTIONER ************/
 .column_left img {
-        width: 100%;
-    }
+    width: 100%;
+}
+
 /************ INDHOLD SLUT *************/
 
 
@@ -417,7 +415,21 @@ footer img {
 
 
 /************ NAVIGATION SLUT *************/
+@media only screen and (min-width: 768px) {
+    #menu {
+        width: 400px;
+        margin: -100px 0 0 0;
+        padding: 25px;
+        padding-top: 125px;
+        right: -100px;
+    }
 
+    #menu li {
+        padding: 15px 0;
+        font-size: 25px;
+    }
+
+}
 
 
 
