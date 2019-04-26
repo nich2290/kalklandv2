@@ -22,12 +22,45 @@
         background-image: url(img/splashimg/splash_kontaktos.jpg);
         background-size: cover;
         background-repeat: no-repeat;
-        background-attachment: fixed;
+
         background-position:center bottom;
 
     }
+    .wrap {
+        margin: 2vw 10vw 5vw 10vw;
+    }
+    .post {
+        padding: 1rem 0 1rem 0;
+    }
 
 
+ /*****************TABLET***************/
+ @media only screen and (min-width: 667px){
+    .kontakt-overskrift {
+        margin-top: 3vw;
+
+    }
+     .post {
+         margin-left: 5vw;
+         margin-right: 5vw;
+     }
+ #splash {
+        height:30vw;
+        background-image: url(img/splashimg/splash_kontaktos.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        background-position: bottom right;
+
+    }
+     .wrap {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr;
+
+        }
+
+}
 
 
 
@@ -40,39 +73,36 @@
     .kontakt-indhold {
         margin-left: 10vw;
     }
+        .post {
+            margin-left: 10vw;
+            margin-right: 10vw;
+        }
+        .post:nth-child(1) {
+            grid-column: 1;
+            grid-row: 1;
+        }
+        .post:nth-child(2) {
+            grid-column: 2;
+            grid-row: 1;
+        }
  #splash {
         height:30vw;
         background-image: url(img/splashimg/splash_kontaktos.jpg);
         background-size: cover;
         background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-position: bottom right;
+        background-position: 50% 50%;
+
 
     }
+        .wrap {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr;
+            margin: 2vw 0vw 5vw 0vw;
+        }
 
 }
 
-    /*****************TABLET***************/
- @media only screen and (min-width: 667px){
-    .kontakt-overskrift {
-
-
-    }
-    .kontakt-indhold {
-        margin-left: 10vw;
-        margin-bottom: 5vw;
-    }
- #splash {
-        height:30vw;
-        background-image: url(img/splashimg/splash_kontaktos.jpg);
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-position: bottom right;
-
-    }
-
-}
 
 </style>
 
@@ -119,18 +149,25 @@
 
     </section>
     <!-- Her starter indhold -->
-    <h2 class="kontakt-overskrift"></h2>
-    <main class="kontakt-indhold">
+    <h2 class="kontakt-overskrift">Kontakt</h2>
+
+    <main class="posts wrap"></main>
+
+   <template>
+
+     <section class="post">
+
+        <h3></h3>
+         <p class="adresse"></p>
+         <p class="by"></p>
+         <p class="email"></p>
+         <p class="tlf"></p>
+         <p class="info"></p>
 
 
 
-        <div class="kontakt-indhold1"></div>
-        <div class="kontakt-indhold2"></div>
-        <div class="kontakt-indhold3"></div>
-        <div class="kontakt-indhold4"></div>
-        <div class="kontakt-indhold5"></div>
-
-    </main>
+     </section>
+ </template>
 
     <!--- HER STARTER FOOTER -->
                 <footer>
@@ -163,29 +200,42 @@
 
         async function hentJson() {
             console.log("Henter json");
-            const url = "http://nicklasgrafisk.dk/kea/07-CMS/kalklandet/wordpress/wp-json/wp/v2/kontakt/32";
+             const url = "http://nicklasgrafisk.dk/kea/07-CMS/kalklandet/wordpress/wp-json/wp/v2/kontakt";
+
             // Henter data filen
             const myJson = await fetch(url);
             // den hentede data skal tolkes som json
             indhold = await myJson.json();
             //Kald funktion der viser data i DOM
             visIndhold();
-            console.log("indhold", indhold);
 
             //Henter indholdet
         }
 
         function visIndhold() {
-            console.log("Viser indhold");
-            document.querySelector(".kontakt-overskrift").innerHTML = indhold.titel;
-            document.querySelector(".kontakt-indhold1").innerHTML = indhold.indhold1;
-            document.querySelector(".kontakt-indhold2").innerHTML = indhold.indhold2;
-            document.querySelector(".kontakt-indhold3").innerHTML = indhold.indhold3;
-            document.querySelector(".kontakt-indhold4").innerHTML = indhold.indhold4;
-            document.querySelector(".kontakt-indhold5").innerHTML = indhold.indhold5;
+            let dest = document.querySelector(".posts");
+            let temp = document.querySelector("template");
+
+            indhold.forEach(post => {
+                let klon = temp.cloneNode(true).content;
+                console.log(post.billede);
+                klon.querySelector("h3").innerHTML = post.title.rendered;
+                klon.querySelector(".adresse").innerHTML = post.adresse;
+                klon.querySelector(".by").innerHTML = post.by;
+                klon.querySelector(".email").innerHTML = post.email;
+                klon.querySelector(".tlf").innerHTML = post.tlf;
+                klon.querySelector(".info").innerHTML = post.info;
+
+
+                dest.appendChild(klon);
+            })
+
+
             // Viser indholdet
         }
-
+            //document.querySelector(".overskrift").innerHTML = indhold.titel;
+            //document.querySelector(".indhold").innerHTML = indhold.indhold1;
+           // document.querySelector(".indhold2").innerHTML += indhold.content.rendered;
     </script>
 </body>
 

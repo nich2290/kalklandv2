@@ -15,10 +15,25 @@
         background-image: url(img/splashimg/splash_aktuelt.jpg);
         background-size: cover;
         background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-position: bottom;
+
+        background-position: 50% 50%;
 
     }
+    .post img{
+                width: 100%;
+            }
+    .post {
+        margin-left: 10vw;
+        margin-right: 10vw;
+
+    }
+    .dato {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+        text-align:right;
+        color: #e76126;
+    }
+
 
     /************ DESKTOP ***********/
 
@@ -28,10 +43,29 @@
         background-image: url(img/splashimg/splash_aktuelt.jpg);
         background-size: cover;
         background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-position: bottom right;
+
+        background-position: 50% 50%;
 
     }
+        .post {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr;
+                margin-left: 10vw;
+                margin-right: 10vw;
+            }
+        .post img{
+                width: 100%;
+            }
+        .text, .billede {
+            padding: 1rem;
+        }
+        .dato {
+            float: right;
+            color: #e76126;
+            font-size: 1.5rem;
+        }
+
         }
 
         @media only screen and (min-width: 667px){
@@ -40,22 +74,26 @@
         background-image: url(img/splashimg/splash_aktuelt.jpg);
         background-size: cover;
         background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-position: 40%;
+
+        background-position: 50% 50%;
 
 
     }
-            #mainwrap {
+            .post {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
                 grid-template-rows: 1fr;
             }
-            .indhold2 img{
+            .post img{
                 width: 100%;
             }
-            .indhold2 {
-                margin-left: 10vw;
-                margin-bottom: 2vh;
+            .post {
+               margin-left: 10vw;
+                margin-right: 10vw;
+
+            }
+            .text, .billede {
+                padding: 1rem;
             }
             .overskrift {
                 text-align: center;
@@ -107,13 +145,21 @@
 
     <!-- Her starter indhold -->
     <section id="splash"></section>
-    <h2 class="overskrift"></h2>
-    <div id="mainwrap">
-    <div class="indhold2"></div>
-    <div class="indhold"></div>
 
+<main class="posts"></main>
+   <template>
+    <h2></h2>
+     <section class="post">
+        <div>
+         <img class="billede">
+         </div>
+         <div>
+         <p class="text"></p>
+         <p class="dato"></p>
+         </div>
 
-    </div>
+     </section>
+ </template>
 
     <!--- HER STARTER FOOTER -->
     <footer>
@@ -143,7 +189,7 @@
 
         async function hentJson() {
             console.log("Henter json");
-             const url = "http://nicklasgrafisk.dk/kea/07-CMS/kalklandet/wordpress/wp-json/wp/v2/aktuelt/62";
+             const url = "http://nicklasgrafisk.dk/kea/07-CMS/kalklandet/wordpress/wp-json/wp/v2/aktuelt";
 
             // Henter data filen
             const myJson = await fetch(url);
@@ -156,13 +202,25 @@
         }
 
         function visIndhold() {
-            console.log("Viser indhold");
-            document.querySelector(".overskrift").innerHTML = indhold.titel;
-            document.querySelector(".indhold").innerHTML = indhold.indhold1;
-            document.querySelector(".indhold2").innerHTML += indhold.content.rendered;
+            let dest = document.querySelector(".posts");
+            let temp = document.querySelector("template");
+
+            indhold.forEach(post => {
+                let klon = temp.cloneNode(true).content;
+                console.log(post.billede);
+                klon.querySelector("h2").innerHTML = post.title.rendered;
+                klon.querySelector("img").src = post.billede.guid;
+                klon.querySelector("p").innerHTML = post.indhold1;
+                klon.querySelector(".dato").innerHTML = post.dato;
+                dest.appendChild(klon);
+            })
+
+
             // Viser indholdet
         }
-
+            //document.querySelector(".overskrift").innerHTML = indhold.titel;
+            //document.querySelector(".indhold").innerHTML = indhold.indhold1;
+           // document.querySelector(".indhold2").innerHTML += indhold.content.rendered;
     </script>
 </body>
 
