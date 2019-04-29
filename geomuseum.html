@@ -10,7 +10,7 @@
 </head>
 <style>
 
-     *::selection {
+    *::selection {
     background: #54A29E;
     color: white;
     }
@@ -71,16 +71,6 @@
         padding: 0 1.5rem 0 1.5rem;
     }
 
-
-    @media only screen and (min-width: 667px){
-
-
-
-
-
-
-
-    }
     @media only screen and (min-width: 1024px){
         #splash {
             height: 30vw;
@@ -92,9 +82,6 @@
             grid-template-columns: 1fr 1fr;
             grid-template-rows: 1fr;
             margin: 0 5rem 0 5rem;
-        }
-        #mainwrap img{
-
         }
 
         .column_left{
@@ -115,7 +102,10 @@
 
         }
         .post {
-            padding: 0 1.5rem 0 1.5rem;
+        padding: 0 1.5rem 0 1.5rem;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+
         }
         .post:nth-child(1){
             grid-row: 1;
@@ -197,7 +187,7 @@
                 <p>På Geomuseum Faxe kan du se den dramatiske historie om den sidste store masseuddøden, der hændte for 66 millioner år siden. Du får også fortællingen om hvordan livet rejste sig på ny og dannede det unikke koralrev.</p><br>
                 <h4>FIND DINE EGNE FOSSILER I FAXE KALKBRUD</h4>
                 <p>
-Efter dit besøg på Geomuseum Faxe kan du gå en tur i Faxe Kalkbrud og på egen hånd finde smukke fossiler. Du kan leje hammer og mejsel på Geomuseum Faxe. Solen kan være meget skarp, så husk altid at medbringe vand, solcreme solbriller eller en hat, når du går tur i kalkbruddet. På vejen passerer du Prismet, som er en flot udkigsplatform ud over kalkbruddet.</p>
+                    Efter dit besøg på Geomuseum Faxe kan du gå en tur i Faxe Kalkbrud og på egen hånd finde smukke fossiler. Du kan leje hammer og mejsel på Geomuseum Faxe. Solen kan være meget skarp, så husk altid at medbringe vand, solcreme solbriller eller en hat, når du går tur i kalkbruddet. På vejen passerer du Prismet, som er en flot udkigsplatform ud over kalkbruddet.</p>
             </div>
 
         </div>
@@ -207,28 +197,28 @@ Efter dit besøg på Geomuseum Faxe kan du gå en tur i Faxe Kalkbrud og på ege
     <h2 class="pogbh2">Priser og booking</h2>
     <main class="posts wrap"></main>
 
-   <template>
+    <template>
 
-     <section class="post">
-
-
-         <h3 class="underrubrik"></h3>
-         <p class="info1"></p>
-         <br>
-         <p class="info2"></p>
-         <p class="info3"></p>
-         <p class="info4"></p>
-         <br>
-         <p class="indhold1"></p>
-         <p class="pris"></p>
-         <p class="indhold3"></p>
-         <p class="indhold4"></p>
+        <section class="post">
 
 
+            <h3 class="underrubrik"></h3>
+            <p class="info1"></p>
+            <br>
+            <p class="info2"></p>
+            <p class="info3"></p>
+            <p class="info4"></p>
+            <br>
+            <p class="indhold1"></p>
+            <p class="pris"></p>
+            <p class="indhold3"></p>
+            <p class="indhold4"></p>
 
 
-     </section>
- </template>
+
+
+        </section>
+    </template>
 
     <!--- HER STARTER FOOTER -->
 
@@ -249,14 +239,14 @@ Efter dit besøg på Geomuseum Faxe kan du gå en tur i Faxe Kalkbrud og på ege
     </footer>
 
 
-<script>
+    <script>
         let indhold;
         document.addEventListener("DOMContentLoaded", hentJson);
         //Hent JSON fil i asynkron function
 
         async function hentJson() {
             console.log("Henter json");
-             const url = "http://nicklasgrafisk.dk/kea/07-CMS/kalklandet/wordpress/wp-json/wp/v2/bookingfaxe";
+            const url = "http://nicklasgrafisk.dk/kea/07-CMS/kalklandet/wordpress/wp-json/wp/v2/bookingfaxe";
 
             // Henter data filen
             const myJson = await fetch(url);
@@ -294,9 +284,10 @@ Efter dit besøg på Geomuseum Faxe kan du gå en tur i Faxe Kalkbrud og på ege
 
             // Viser indholdet
         }
-            //document.querySelector(".overskrift").innerHTML = indhold.titel;
-            //document.querySelector(".indhold").innerHTML = indhold.indhold1;
-           // document.querySelector(".indhold2").innerHTML += indhold.content.rendered;
+        //document.querySelector(".overskrift").innerHTML = indhold.titel;
+        //document.querySelector(".indhold").innerHTML = indhold.indhold1;
+        // document.querySelector(".indhold2").innerHTML += indhold.content.rendered;
+
     </script>
 </body>
 

@@ -110,7 +110,9 @@
             margin: 0 5rem 0 5rem;
         }
         .post {
-            padding: 0 1.5rem 0 1.5rem;
+        padding: 0 1.5rem 0 1.5rem;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
 
         }
         .wrap {
@@ -187,8 +189,9 @@
                 <h4>Den Kolde Krig påvirkede enhver, der levede i perioden. På Koldkrigsmuseum Stevnsfort minder vi dig om en historie, som du måske kan huske, men slet ikke kender.</h4>
                 <p>Under Den Kolde Krig var Stevnsfort en brik i Danmarks og NATO’s forsvar. Halvøen Stevns ville ligge i allerforreste frontlinje, hvis der udbrød krig mellem øst og vest. Derfor byggede man Stevnsfort, og i 40 år var man her døgnet rundt klar til krig.</p><br>
                 <p>I dag kan du på en guidet tur opleve det underjordiske fort, som det så ud dengang, da krigen var tættest på. Ethvert besøg på fortet er en ny og særlig oplevelse. I selskab med en af museets 20 engagerede og forskellige guider får du nærværende og levende fortællinger om den allestedsnærværende krig i en unik og autentisk ramme. </p> <br>
-                <p>Stevnsfort er med sine 1,7 km gange hugget ud i kalken et fantastisk bygningsværk. Det er samtidig et meget kompliceret bygningsværk, der er bygget til at kunne modstå atomangreb og kunne fortsætte sine funktioner uden forbindelse til omverdenen i månedsvis.</p> <br><p>
-                Fortet rummer i hundredevis af rum, gange og kanaler med særlige funktioner og tekniske installationer. Kun en lille del af disse rum er normalt tilgængelige for museets gæster. På den 2 timer lange specialtur i undergrunden ser I en del af disse rum og får et langt mere detaljeret indblik i, hvordan fortet skulle fungere i en krigssituation.</p><br>
+                <p>Stevnsfort er med sine 1,7 km gange hugget ud i kalken et fantastisk bygningsværk. Det er samtidig et meget kompliceret bygningsværk, der er bygget til at kunne modstå atomangreb og kunne fortsætte sine funktioner uden forbindelse til omverdenen i månedsvis.</p> <br>
+                <p>
+                    Fortet rummer i hundredevis af rum, gange og kanaler med særlige funktioner og tekniske installationer. Kun en lille del af disse rum er normalt tilgængelige for museets gæster. På den 2 timer lange specialtur i undergrunden ser I en del af disse rum og får et langt mere detaljeret indblik i, hvordan fortet skulle fungere i en krigssituation.</p><br>
                 <p>Stevnsfort og Den Kolde Krig rummer masser af spændende og ukendte historier om en periode, hvor krigstruslen påvirkede hele samfundet. Museet kan skræddersy specialture til grupper med særlige interesser for historie, teknik eller fantastiske oplevelser. Kontakt os for yderligere information.</p>
 
             </div>
@@ -200,25 +203,25 @@
     <h2 class="pogbh2">Priser og booking</h2>
     <main class="posts wrap"></main>
 
-   <template>
+    <template>
 
-     <section class="post">
-
-
-         <h3 class="underrubrik"></h3>
-         <p class="info1"></p>
-         <br>
-         <p class="info2"></p>
-         <br>
-         <p class="indhold1"></p>
-         <p class="pris"></p>
-         <p class="indhold3"></p>
+        <section class="post">
 
 
+            <h3 class="underrubrik"></h3>
+            <p class="info1"></p>
+            <br>
+            <p class="info2"></p>
+            <br>
+            <p class="indhold1"></p>
+            <p class="pris"></p>
+            <p class="indhold3"></p>
 
 
-     </section>
- </template>
+
+
+        </section>
+    </template>
 
 
     <!--- HER STARTER FOOTER -->
@@ -246,14 +249,14 @@
 
 
 
- <script>
+    <script>
         let indhold;
         document.addEventListener("DOMContentLoaded", hentJson);
         //Hent JSON fil i asynkron function
 
         async function hentJson() {
             console.log("Henter json");
-             const url = "http://nicklasgrafisk.dk/kea/07-CMS/kalklandet/wordpress/wp-json/wp/v2/booking-stevnsfort";
+            const url = "http://nicklasgrafisk.dk/kea/07-CMS/kalklandet/wordpress/wp-json/wp/v2/booking-stevnsfort";
 
             // Henter data filen
             const myJson = await fetch(url);
@@ -288,9 +291,10 @@
 
             // Viser indholdet
         }
-            //document.querySelector(".overskrift").innerHTML = indhold.titel;
-            //document.querySelector(".indhold").innerHTML = indhold.indhold1;
-           // document.querySelector(".indhold2").innerHTML += indhold.content.rendered;
+        //document.querySelector(".overskrift").innerHTML = indhold.titel;
+        //document.querySelector(".indhold").innerHTML = indhold.indhold1;
+        // document.querySelector(".indhold2").innerHTML += indhold.content.rendered;
+
     </script>
 </body>
 

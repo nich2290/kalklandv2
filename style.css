@@ -47,7 +47,7 @@ html {
 }
 
 *::selection {
-    background: #e76126;
+    background: #FE6400;
     color: white;
 }
 
@@ -78,6 +78,7 @@ h2 {
     text-align: center;
     padding: 1rem;
     font-size: 2rem;
+    margin-top: 1.5em;
 
 }
 
@@ -88,11 +89,12 @@ h4 {
 
 h1 {
     text-align: center;
-    color: #e76126;
+    color: #FE6400;
     font-family: 'limestonelight';
     padding: 1rem;
     font-size: 2rem;
 }
+
 h3 {
     margin-bottom: 1rem;
     font-family: 'limestonelight';
@@ -124,6 +126,9 @@ h3 {
 }
 
 
+.post {
+    margin: 1em;
+}
 
 /************ INDHOLD SLUT *************/
 
@@ -643,5 +648,11 @@ footer {
         margin-top: 1rem;
 
     }
+
+    .dato {
+        margin-right: 1em;
+    }
+
+
 
 }
