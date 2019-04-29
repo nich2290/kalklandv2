@@ -21,7 +21,8 @@
 
     }
     .om-overskrift {
-        margin-top: 7vw;
+        margin-top: 3vw;
+        margin-bottom: 0vw;
 
 
     }
@@ -42,7 +43,7 @@
 
     }
     .om-overskrift {
-        margin-top: 7vw;
+        margin-top: 1vw;
 
 
     }
@@ -64,6 +65,7 @@
 
     .om-overskrift {
         margin-top: 1vw;
+        margin-bottom: 0vw;
 
 
     }
@@ -71,6 +73,7 @@
     .om-wrapper {
         margin-left: 10vw;
         margin-right: 10vw;
+        margin-bottom: 1vw;
         padding: 0;
     }
 
@@ -81,7 +84,7 @@
     <!-- NAVIGATION -->
     <header>
         <nav role='navigation'>
-            <a href="index.html"><img src="img/SVG/Artboard%2010.svg"></a>
+            <a href="index.html"><img src="img/SVG/kalklandet-all.svg"></a>
             <div id="menuToggle">
                 <!-- Skjult checkbox = click reciever-->
                 <input type="checkbox" />
@@ -111,7 +114,7 @@
                 </li>
                 <li><a href="aktuelt.html">Aktuelt</a></li>
                 <li><a class="current" href="om-os.html">Om os</a></li>
-                <li><a href="kontakt.html" class="kontaktnav">Kontakt</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
             </ul>
         </nav>
     </header>
@@ -131,6 +134,8 @@
         <div class="om-indhold"></div>
         <div class="om-indhold2"></div>
         <div class="om-indhold3"></div>
+        <div class="om-indhold4"></div>
+
     </div>
 
 
@@ -181,6 +186,8 @@
             document.querySelector(".om-indhold").innerHTML = indhold.indhold1;
             document.querySelector(".om-indhold2").innerHTML = indhold.indhold2;
             document.querySelector(".om-indhold3").innerHTML = indhold.indhold3;
+            document.querySelector(".om-indhold4").innerHTML = indhold.indhold4;
+            document.querySelector(".om-indhold5").innerHTML = indhold.indhold5;
             // Viser indholdet
         }
 

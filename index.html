@@ -13,7 +13,32 @@
     /************ VIDEO ************/
     /* Style the video: 100% width and height to cover the entire window */
 
+    .post {
+            padding: 0 1.5rem 0 1.5rem;
+        }
+    h3 {
+        margin-top: 1rem;
+    }
+        .wrap {
 
+
+            margin: 0 1rem 0 1rem;
+            margin-bottom: 1rem;
+        }
+        .post:nth-child(1) {
+            grid-column: 2;
+            grid-row: 1;
+        }
+        .post:nth-child(2) {
+            grid-column: 2;
+            grid-row: 1;
+        }
+        .wrap img {
+            grid-column: 1;
+            grid-row: 1;
+            padding: 0 1.5rem 0 1.5rem;
+            width: 100%;
+        }
 
     @media only screen and (min-width: 1024px){
         nav {
@@ -38,10 +63,37 @@
             width: 100%;
             z-index: 1;
         }
+        h3 {
+            margin-top: 1rem;
+        }
 
     #splashvideo img {
         width: 100%;
     }
+        .post {
+            padding: 0 1.5rem 0 1.5rem;
+        }
+        .wrap {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr;
+            margin: 0 5rem 0 5rem;
+            margin-bottom: 1rem;
+        }
+        .post:nth-child(1) {
+            grid-column: 2;
+            grid-row: 1;
+        }
+        .post:nth-child(2) {
+            grid-column: 2;
+            grid-row: 1;
+        }
+        .wrap img {
+            grid-column: 1;
+            grid-row: 1;
+            padding: 0 1.5rem 0 1.5rem;
+            width: 75%;
+        }
 
 }
     /* Add some content at the bottom of the video/page */
@@ -54,7 +106,7 @@
 <body>
     <header>
         <nav id="navbar" role='navigation'>
-            <a href="index.html"><img src="img/SVG/Artboard%2010.svg"></a>
+            <a href="index.html"><img src="img/nytlogotest.svg"></a>
             <div id="menuToggle">
                 <!-- Skjult checkbox = click reciever-->
                 <input type="checkbox" />
@@ -84,7 +136,7 @@
                 </li>
                 <li><a href="aktuelt.html">Aktuelt</a></li>
                 <li><a href="om-os.html">Om os</a></li>
-                <li><a href="kontakt.html"  class="kontaktnav">Kontakt</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
             </ul>
         </nav>
     </header>
@@ -94,6 +146,40 @@
 
         <!-- Optional: some overlay text to describe the video -->
 </section>
+          <h2 class="pogbh2">Åbningstider</h2>
+
+
+    <main class="posts wrap"></main>
+
+   <template>
+<div><img src="img/SVG/sjaelland.png"></div>
+     <section class="post">
+
+
+         <h3 class="titel"></h3>
+
+         <br>
+         <p class="indhold1"></p>
+         <p class="indhold22"></p>
+         <p class="indhold3"></p><br>
+         <p>Korsnæbsvej 60, 4673 Rødvig Stevns</p>
+         <h3 class="titel2"></h3>
+         <p class="indhold4"></p>
+         <p class="indhold5"></p>
+         <p class="indhold6"></p>
+         <p>Højerup Bygade 39, 4660 Store Heddinge</p><br>
+         <h3 class="titel3"></h3>
+         <p class="indhold7"></p>
+         <p class="indhold8"></p><br>
+         <p>Østervej 2, 4640 Faxe</p>
+
+
+
+
+     </section>
+ </template>
+
+
             <footer>
         <div class="social"><a href="YOUR FACEBOOK URL">
 <img src="img/SVG/facebook-icon.svg">
@@ -116,7 +202,55 @@
 
 
     <script>
+ let indhold;
+        document.addEventListener("DOMContentLoaded", hentJson);
+        //Hent JSON fil i asynkron function
 
+        async function hentJson() {
+            console.log("Henter json");
+             const url = "http://nicklasgrafisk.dk/kea/07-CMS/kalklandet/wordpress/wp-json/wp/v2/bningstider";
+
+            // Henter data filen
+            const myJson = await fetch(url);
+            // den hentede data skal tolkes som json
+            indhold = await myJson.json();
+            //Kald funktion der viser data i DOM
+            visIndhold();
+
+            //Henter indholdet
+        }
+
+        function visIndhold() {
+            let dest = document.querySelector(".posts");
+            let temp = document.querySelector("template");
+
+            indhold.forEach(post => {
+                let klon = temp.cloneNode(true).content;
+                console.log(post.billede);
+
+                klon.querySelector(".titel").innerHTML = post.titel;
+
+                klon.querySelector(".indhold1").innerHTML = post.indhold1;
+                klon.querySelector(".indhold22").innerHTML = post.indhold2;
+                klon.querySelector(".indhold3").innerHTML = post.indhold3;
+
+                klon.querySelector(".titel2").innerHTML = post.titel2;
+                klon.querySelector(".indhold4").innerHTML = post.indhold4;
+                klon.querySelector(".indhold5").innerHTML = post.indhold5;
+                klon.querySelector(".indhold6").innerHTML = post.indhold6;
+
+                klon.querySelector(".titel3").innerHTML = post.titel3;
+                klon.querySelector(".indhold7").innerHTML = post.indhold7;
+                klon.querySelector(".indhold8").innerHTML = post.indhold8;
+
+
+
+                dest.appendChild(klon);
+            })
+
+
+            // Viser indholdet
+        }
         //Kilde: https://www.w3schools.com/howto/howto_js_navbar_sticky.asp?fbclid=IwAR3wEHxRExqaK8dqWlULXH_Z03_f-no3jIpNaxF0vUrm8nb4PWsVwwuCjlY //
 // When the user scrolls the page, execute myFunction
 window.onscroll = function() {myFunction()};

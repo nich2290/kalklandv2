@@ -10,6 +10,12 @@
 </head>
 <style>
 
+    *::selection {
+    background: #55798E;
+    color: white;
+
+    }
+
     #splash {
         height: 60vw;
         background-image: url(img/splashimg/Stevns_Fort_1080.jpg);
@@ -40,7 +46,26 @@
 
         padding: 0 1.5rem 0 1.5rem;
     }
-
+    h2, h1 {
+        color: #55798E;
+    }
+    footer {
+        background-color: #55798E;
+    }
+    nav ul li a:hover {
+        color: #55798E;    }
+    .kontaktnav {
+        color: #55798E;
+    }
+    #menuToggle span {
+        background-color: #55798E;
+    }
+    #menu {
+        background-color: #55798E;
+    }
+    .post:nth-child(2) {
+            margin-bottom: 1rem;
+        }
 
     @media only screen and (min-width: 667px){
 
@@ -70,19 +95,37 @@
             margin-bottom: 2vh;
 
         }
+        .pogbh2 {
+            padding-bottom: 0;
+        }
         .column_right {
            grid-column: 2;
             grid-row: 1;
         }
 
-        .section {
-  text-align:center;
-  font-size: 3em;
-}
+        .wrap {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr;
+            margin: 0 5rem 0 5rem;
+        }
+        .post {
+            padding: 0 1.5rem 0 1.5rem;
 
-    }
+        }
+        .wrap {
+            margin-top: 1rem;
+        }
 
-
+        .post:nth-child(1) {
+            grid-column: 1;
+            grid-row: 1;
+            margin-bottom: 1rem;
+        }
+        .post:nth-child(2) {
+            grid-column: 2;
+            grid-row: 1;
+        }
 
 
 
@@ -93,7 +136,7 @@
 <body>
     <header>
         <nav role='navigation'>
-            <a href="index.html"><img src="img/SVG/Artboard%2010.svg"></a>
+            <a href="index.html"><img src="img/SVG/kalklandet-stevnsf.svg"></a>
             <div id="menuToggle">
                 <!-- Skjult checkbox = click reciever-->
                 <input type="checkbox" />
@@ -123,7 +166,7 @@
                 </li>
                 <li><a href="aktuelt.html">Aktuelt</a></li>
                 <li><a href="om-os.html">Om os</a></li>
-                <li><a href="kontakt.html" class="kontaktnav">Kontakt</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
             </ul>
         </nav>
     </header>
@@ -143,24 +186,40 @@
             <div class="column_right">
                 <h4>Den Kolde Krig påvirkede enhver, der levede i perioden. På Koldkrigsmuseum Stevnsfort minder vi dig om en historie, som du måske kan huske, men slet ikke kender.</h4>
                 <p>Under Den Kolde Krig var Stevnsfort en brik i Danmarks og NATO’s forsvar. Halvøen Stevns ville ligge i allerforreste frontlinje, hvis der udbrød krig mellem øst og vest. Derfor byggede man Stevnsfort, og i 40 år var man her døgnet rundt klar til krig.</p><br>
-                <p>I dag kan du på en guidet tur opleve det underjordiske fort, som det så ud dengang, da krigen var tættest på. Ethvert besøg på fortet er en ny og særlig oplevelse. I selskab med en af museets 20 engagerede og forskellige guider får du nærværende og levende fortællinger om den allestedsnærværende krig i en unik og autentisk ramme. </p>
+                <p>I dag kan du på en guidet tur opleve det underjordiske fort, som det så ud dengang, da krigen var tættest på. Ethvert besøg på fortet er en ny og særlig oplevelse. I selskab med en af museets 20 engagerede og forskellige guider får du nærværende og levende fortællinger om den allestedsnærværende krig i en unik og autentisk ramme. </p> <br>
+                <p>Stevnsfort er med sine 1,7 km gange hugget ud i kalken et fantastisk bygningsværk. Det er samtidig et meget kompliceret bygningsværk, der er bygget til at kunne modstå atomangreb og kunne fortsætte sine funktioner uden forbindelse til omverdenen i månedsvis.</p> <br><p>
+                Fortet rummer i hundredevis af rum, gange og kanaler med særlige funktioner og tekniske installationer. Kun en lille del af disse rum er normalt tilgængelige for museets gæster. På den 2 timer lange specialtur i undergrunden ser I en del af disse rum og får et langt mere detaljeret indblik i, hvordan fortet skulle fungere i en krigssituation.</p><br>
+                <p>Stevnsfort og Den Kolde Krig rummer masser af spændende og ukendte historier om en periode, hvor krigstruslen påvirkede hele samfundet. Museet kan skræddersy specialture til grupper med særlige interesser for historie, teknik eller fantastiske oplevelser. Kontakt os for yderligere information.</p>
+
             </div>
 
         </div>
 
 
     </section>
-    <section id="second">
-    <div id="fullpage">
-    <div class="section">Section 1</div>
-    <div class="section">
-        <div class="slide" data-anchor="slide1">Slide 2.1</div>
-        <div class="slide" data-anchor="slide2">Slide 2.2</div>
-    </div>
-    <div class="section">Section 3</div>
-    <div class="section">Section 4</div>
-</div>
-    </section>
+    <h2 class="pogbh2">Priser og booking</h2>
+    <main class="posts wrap"></main>
+
+   <template>
+
+     <section class="post">
+
+
+         <h3 class="underrubrik"></h3>
+         <p class="info1"></p>
+         <br>
+         <p class="info2"></p>
+         <br>
+         <p class="indhold1"></p>
+         <p class="pris"></p>
+         <p class="indhold3"></p>
+
+
+
+
+     </section>
+ </template>
+
 
     <!--- HER STARTER FOOTER -->
 
@@ -187,17 +246,15 @@
 
 
 
-    <script>
-        new fullpage('#fullpage', {
-  sectionsColor: ['yellow', 'orange', '#C0C0C0', '#ADD8E6'],
-});
+ <script>
         let indhold;
         document.addEventListener("DOMContentLoaded", hentJson);
         //Hent JSON fil i asynkron function
 
         async function hentJson() {
             console.log("Henter json");
-            // const url = "http://nicklasgrafisk.dk/kea/07-CMS/sushiwp/wordpress/wp-json/wp/v2/pages/20";
+             const url = "http://nicklasgrafisk.dk/kea/07-CMS/kalklandet/wordpress/wp-json/wp/v2/booking-stevnsfort";
+
             // Henter data filen
             const myJson = await fetch(url);
             // den hentede data skal tolkes som json
@@ -209,12 +266,31 @@
         }
 
         function visIndhold() {
-            console.log("Viser indhold");
-            document.querySelector(".overskrift").innerHTML = indhold.title.rendered;
-            document.querySelector(".indhold").innerHTML = indhold.content.rendered;
+            let dest = document.querySelector(".posts");
+            let temp = document.querySelector("template");
+
+            indhold.forEach(post => {
+                let klon = temp.cloneNode(true).content;
+                console.log(post.billede);
+                klon.querySelector(".info1").innerHTML = post.info1;
+                klon.querySelector(".info2").innerHTML = post.info2;
+                klon.querySelector("h3").innerHTML = post.titel;
+
+                klon.querySelector(".indhold1").innerHTML = post.indhold1;
+                klon.querySelector(".pris").innerHTML = post.indhold2;
+                klon.querySelector(".indhold3").innerHTML = post.indhold3;
+
+
+
+                dest.appendChild(klon);
+            })
+
+
             // Viser indholdet
         }
-
+            //document.querySelector(".overskrift").innerHTML = indhold.titel;
+            //document.querySelector(".indhold").innerHTML = indhold.indhold1;
+           // document.querySelector(".indhold2").innerHTML += indhold.content.rendered;
     </script>
 </body>
 

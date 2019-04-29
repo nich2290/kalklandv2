@@ -47,7 +47,7 @@ html {
 }
 
 *::selection {
-    background: #FE6400;
+    background: #e76126;
     color: white;
 }
 
@@ -88,10 +88,14 @@ h4 {
 
 h1 {
     text-align: center;
-    color: #FE6400;
+    color: #e76126;
     font-family: 'limestonelight';
     padding: 1rem;
     font-size: 2rem;
+}
+h3 {
+    margin-bottom: 1rem;
+    font-family: 'limestone'
 }
 
 /************ GENERELT SLUT *************/
@@ -493,7 +497,7 @@ footer {
     }
 
     nav .current {
-        background-color: #e6d5ab;
+        background: rgba(0, 0, 0, .15);
     }
 
     nav ul {
@@ -574,14 +578,9 @@ footer {
         z-index: 10;
     }
 
-    .kontaktnav {
 
-        color: #e76126;
-    }
 
-    .kontaktnav:hover {
-        color: black;
-    }
+
 
 
 

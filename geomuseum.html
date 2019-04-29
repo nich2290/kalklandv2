@@ -10,6 +10,11 @@
 </head>
 <style>
 
+     *::selection {
+    background: #54A29E;
+    color: white;
+    }
+
     #splash {
         height: 60vw;
         background-image: url(img/splashimg/Geo_Faxe_1080.jpg);
@@ -18,9 +23,34 @@
 
     }
 
-
-
+ h2, h1 {
+        color: #54A29E;
+    }
+    h3 {
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+    }
+    footer {
+        background-color: #54A29E;
+    }
+    nav ul li a:hover {
+        color: #54A29E;    }
+    .kontaktnav {
+        color: #54A29E;
+    }
+    #menuToggle span {
+        background-color: #54A29E;
+    }
+    #menu {
+        background-color: #54A29E;
+    }
+    .post:nth-child(3){
+            margin-bottom: 1rem;
         }
+        .post {
+            padding: 0 1.5rem 0 1.5rem;
+        }
+
     #mainwrap {
         display: grid;
         grid-template-columns: 1fr;
@@ -76,7 +106,30 @@
            grid-column: 2;
             grid-row: 1;
         }
+        .wrap {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr;
+            margin: 0 5rem 0 5rem;
 
+
+        }
+        .post {
+            padding: 0 1.5rem 0 1.5rem;
+        }
+        .post:nth-child(1){
+            grid-row: 1;
+            grid-column: 1;
+        }
+        .post:nth-child(2){
+            grid-row: 1;
+            grid-column: 2;
+        }
+        .post:nth-child(3){
+            grid-row: 1;
+            grid-column: 3;
+            margin-bottom: 1rem;
+        }
 
 
     }
@@ -92,7 +145,7 @@
 <body>
     <header>
         <nav role='navigation'>
-            <a href="index.html"><img src="img/SVG/Artboard%2010.svg"></a>
+            <a href="index.html"><img src="img/SVG/kalklandet-faxe.svg"></a>
             <div id="menuToggle">
                 <!-- Skjult checkbox = click reciever-->
                 <input type="checkbox" />
@@ -122,7 +175,7 @@
                 </li>
                 <li><a href="aktuelt.html">Aktuelt</a></li>
                 <li><a href="om-os.html">Om os</a></li>
-                <li><a href="kontakt.html" class="kontaktnav">Kontakt</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
             </ul>
         </nav>
     </header>
@@ -142,13 +195,40 @@
             <div class="column_right">
                 <h4>Rejs tilbage i tiden til dengang Danmark var dækket af et dybt hav, og der voksede et stort koralrev, hvor Faxe ligger i dag. Her levede hajer og krokodiller sammen med mere end 500 andre slags dyr.</h4>
                 <p>På Geomuseum Faxe kan du se den dramatiske historie om den sidste store masseuddøden, der hændte for 66 millioner år siden. Du får også fortællingen om hvordan livet rejste sig på ny og dannede det unikke koralrev.</p><br>
-                <p>Du kan også gå på fossiljagt i Faxe Kalkbrud og finde dine egne 63 millioner år gamle fossiler.</p>
+                <h4>FIND DINE EGNE FOSSILER I FAXE KALKBRUD</h4>
+                <p>
+Efter dit besøg på Geomuseum Faxe kan du gå en tur i Faxe Kalkbrud og på egen hånd finde smukke fossiler. Du kan leje hammer og mejsel på Geomuseum Faxe. Solen kan være meget skarp, så husk altid at medbringe vand, solcreme solbriller eller en hat, når du går tur i kalkbruddet. På vejen passerer du Prismet, som er en flot udkigsplatform ud over kalkbruddet.</p>
             </div>
 
         </div>
 
 
     </section>
+    <h2 class="pogbh2">Priser og booking</h2>
+    <main class="posts wrap"></main>
+
+   <template>
+
+     <section class="post">
+
+
+         <h3 class="underrubrik"></h3>
+         <p class="info1"></p>
+         <br>
+         <p class="info2"></p>
+         <p class="info3"></p>
+         <p class="info4"></p>
+         <br>
+         <p class="indhold1"></p>
+         <p class="pris"></p>
+         <p class="indhold3"></p>
+         <p class="indhold4"></p>
+
+
+
+
+     </section>
+ </template>
 
     <!--- HER STARTER FOOTER -->
 
@@ -169,19 +249,15 @@
     </footer>
 
 
-
-
-
-
-
-    <script>
+<script>
         let indhold;
         document.addEventListener("DOMContentLoaded", hentJson);
         //Hent JSON fil i asynkron function
 
         async function hentJson() {
             console.log("Henter json");
-            // const url = "http://nicklasgrafisk.dk/kea/07-CMS/sushiwp/wordpress/wp-json/wp/v2/pages/20";
+             const url = "http://nicklasgrafisk.dk/kea/07-CMS/kalklandet/wordpress/wp-json/wp/v2/bookingfaxe";
+
             // Henter data filen
             const myJson = await fetch(url);
             // den hentede data skal tolkes som json
@@ -193,12 +269,34 @@
         }
 
         function visIndhold() {
-            console.log("Viser indhold");
-            document.querySelector(".overskrift").innerHTML = indhold.title.rendered;
-            document.querySelector(".indhold").innerHTML = indhold.content.rendered;
+            let dest = document.querySelector(".posts");
+            let temp = document.querySelector("template");
+
+            indhold.forEach(post => {
+                let klon = temp.cloneNode(true).content;
+                console.log(post.billede);
+                klon.querySelector(".info1").innerHTML = post.info1;
+                klon.querySelector(".info2").innerHTML = post.info2;
+                klon.querySelector(".info3").innerHTML = post.info3;
+                klon.querySelector(".info4").innerHTML = post.info4;
+                klon.querySelector("h3").innerHTML = post.titel;
+
+                klon.querySelector(".indhold1").innerHTML = post.indhold1;
+                klon.querySelector(".pris").innerHTML = post.indhold2;
+                klon.querySelector(".indhold3").innerHTML = post.indhold3;
+                klon.querySelector(".indhold4").innerHTML = post.indhold4;
+
+
+
+                dest.appendChild(klon);
+            })
+
+
             // Viser indholdet
         }
-
+            //document.querySelector(".overskrift").innerHTML = indhold.titel;
+            //document.querySelector(".indhold").innerHTML = indhold.indhold1;
+           // document.querySelector(".indhold2").innerHTML += indhold.content.rendered;
     </script>
 </body>
 
