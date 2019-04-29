@@ -5,12 +5,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
-
     <title>Aktuelt</title>
-</head>
-<style>
 
-    #splash {
+    <style>
+
+        #splash {
         height:60vw;
         background-image: url(img/splashimg/splash_aktuelt.jpg);
         background-size: cover;
@@ -102,12 +101,14 @@
 
         }
 </style>
+</head>
+
 
 <body>
     <!-- NAVIGATION -->
     <header>
-        <nav id="navbar" role='navigation'>
-            <a href="index.html"><img class="logo" src="img/SVG/nytlogo-orange.svg"></a>
+        <nav id="navbar">
+            <a href="index.html"><img class="logo" src="img/SVG/nytlogo-orange.svg" alt="Kalklandet logo"></a>
             <div id="menuToggle">
                 <!-- Skjult checkbox = click reciever-->
                 <input type="checkbox" />
@@ -146,35 +147,37 @@
     <!-- Her starter indhold -->
     <section id="splash"></section>
 
-<main class="posts"></main>
-   <template>
-    <h2></h2>
-     <section class="post">
-        <div>
-         <img class="billede">
-         </div>
-         <div>
-         <p class="text"></p>
-         <p class="dato"></p>
-         </div>
+    <main class="posts"></main>
+    <template>
+        <h2></h2>
+        <section class="post">
+            <div>
+                <img class="billede">
+            </div>
+            <div>
+                <p class="text"></p>
+                <p class="dato"></p>
+            </div>
 
-     </section>
- </template>
+        </section>
+    </template>
 
     <!--- HER STARTER FOOTER -->
     <footer>
         <div class="social"><a href="YOUR FACEBOOK URL">
-                <img src="img/SVG/facebook-icon.svg">
+                <img src="img/SVG/facebook-icon.svg" alt="Facebook ikon">
             </a>
             <a href="YOUR INSTAGRAM URL">
-                <img src="img/SVG/instagram-icon.svg">
+                <img src="img/SVG/instagram-icon.svg" alt="Instagram ikon">
             </a>
             <a href="YOUR TWITTER URL">
-                <img src="img/SVG/twitter-icon.svg">
+                <img src="img/SVG/twitter-icon.svg" alt="Twitter ikon">
             </a>
         </div>
 
+
     </footer>
+
 
 
 
@@ -189,7 +192,7 @@
 
         async function hentJson() {
             console.log("Henter json");
-             const url = "http://nicklasgrafisk.dk/kea/07-CMS/kalklandet/wordpress/wp-json/wp/v2/aktuelt";
+            const url = "http://nicklasgrafisk.dk/kea/07-CMS/kalklandet/wordpress/wp-json/wp/v2/aktuelt";
 
             // Henter data filen
             const myJson = await fetch(url);
@@ -218,9 +221,10 @@
 
             // Viser indholdet
         }
-            //document.querySelector(".overskrift").innerHTML = indhold.titel;
-            //document.querySelector(".indhold").innerHTML = indhold.indhold1;
-           // document.querySelector(".indhold2").innerHTML += indhold.content.rendered;
+        //document.querySelector(".overskrift").innerHTML = indhold.titel;
+        //document.querySelector(".indhold").innerHTML = indhold.indhold1;
+        // document.querySelector(".indhold2").innerHTML += indhold.content.rendered;
+
     </script>
 </body>
 

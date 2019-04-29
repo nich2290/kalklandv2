@@ -5,11 +5,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
-
     <title>Kontakt</title>
-</head>
-<style>
-    /***************MOBIL*************/
+
+    <style>
+        /***************MOBIL*************/
      .kontakt-overskrift {
         margin-top: 3vw;
 
@@ -105,12 +104,14 @@
 
 
 </style>
+</head>
+
 
 <body>
     <!-- NAVIGATION -->
     <header>
-        <nav id="navbar" role='navigation'>
-            <a href="index.html"><img class="logo" src="img/SVG/nytlogo-orange.svg"></a>
+        <nav id="navbar">
+            <a href="index.html"><img class="logo" src="img/SVG/nytlogo-orange.svg" alt="Kalklandet logo"></a>
             <div id="menuToggle">
                 <!-- Skjult checkbox = click reciever-->
                 <input type="checkbox" />
@@ -140,7 +141,7 @@
                 </li>
                 <li><a href="aktuelt.html">Aktuelt</a></li>
                 <li><a href="om-os.html">Om os</a></li>
-                <li><a  href="kontakt.html" class="current farve">Kontakt</a></li>
+                <li><a href="kontakt.html" class="current farve">Kontakt</a></li>
             </ul>
         </nav>
     </header>
@@ -153,39 +154,38 @@
 
     <main class="posts wrap"></main>
 
-   <template>
+    <template>
 
-     <section class="post">
+        <section class="post">
 
-        <h3></h3>
-         <p class="adresse"></p>
-         <p class="by"></p>
-         <p class="email"></p>
-         <p class="tlf"></p>
-         <p class="info"></p>
+            <h3></h3>
+            <p class="adresse"></p>
+            <p class="by"></p>
+            <p class="email"></p>
+            <p class="tlf"></p>
+            <p class="info"></p>
 
 
 
-     </section>
- </template>
+        </section>
+    </template>
 
     <!--- HER STARTER FOOTER -->
-                <footer>
+    <footer>
         <div class="social"><a href="YOUR FACEBOOK URL">
-<img src="img/SVG/facebook-icon.svg">
-</a>
-<a href="YOUR INSTAGRAM URL">
-<img src="img/SVG/instagram-icon.svg">
-</a>
-<a href="YOUR TWITTER URL">
-<img src="img/SVG/twitter-icon.svg">
-</a>
-
-
-</div>
+                <img src="img/SVG/facebook-icon.svg" alt="Facebook ikon">
+            </a>
+            <a href="YOUR INSTAGRAM URL">
+                <img src="img/SVG/instagram-icon.svg" alt="Instagram ikon">
+            </a>
+            <a href="YOUR TWITTER URL">
+                <img src="img/SVG/twitter-icon.svg" alt="Twitter ikon">
+            </a>
+        </div>
 
 
     </footer>
+
 
 
 
@@ -200,7 +200,7 @@
 
         async function hentJson() {
             console.log("Henter json");
-             const url = "http://nicklasgrafisk.dk/kea/07-CMS/kalklandet/wordpress/wp-json/wp/v2/kontakt";
+            const url = "http://nicklasgrafisk.dk/kea/07-CMS/kalklandet/wordpress/wp-json/wp/v2/kontakt";
 
             // Henter data filen
             const myJson = await fetch(url);
@@ -233,9 +233,10 @@
 
             // Viser indholdet
         }
-            //document.querySelector(".overskrift").innerHTML = indhold.titel;
-            //document.querySelector(".indhold").innerHTML = indhold.indhold1;
-           // document.querySelector(".indhold2").innerHTML += indhold.content.rendered;
+        //document.querySelector(".overskrift").innerHTML = indhold.titel;
+        //document.querySelector(".indhold").innerHTML = indhold.indhold1;
+        // document.querySelector(".indhold2").innerHTML += indhold.content.rendered;
+
     </script>
 </body>
 

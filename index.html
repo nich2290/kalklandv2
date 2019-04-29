@@ -4,13 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <link rel="stylesheet" href="style.css">
-
     <title>Kalklandet</title>
-</head>
-<style>
-    /************ VIDEO ************/
+
+    <style>
+        /************ VIDEO ************/
     /* Style the video: 100% width and height to cover the entire window */
 
     .post {
@@ -102,11 +100,13 @@
     /* Style the button used to pause/play the video */
 
 </style>
+</head>
+
 
 <body>
     <header>
-        <nav id="navbar" role='"navigation'>
-            <a href="index.html"><img class="logo" src="img/SVG/nytlogo-orange.svg"></a>
+        <nav id="navbar">
+            <a href="index.html"><img class="logo" src="img/SVG/nytlogo-orange.svg" alt="Kalklandet logo"></a>
             <div id="menuToggle">
                 <!-- Skjult checkbox = click reciever-->
                 <input type="checkbox" />
@@ -142,55 +142,55 @@
     </header>
     <section id="splashvideo">
 
-<video autoplay src="video/kalklandv2.mp4" width="100%" controls></video>
+        <video autoplay src="video/kalklandv2.mp4" width="100%" controls></video>
 
         <!-- Optional: some overlay text to describe the video -->
-</section>
-          <h2 class="pogbh2">Åbningstider</h2>
+    </section>
+    <h2 class="pogbh2">Åbningstider</h2>
 
 
     <main class="posts wrap"></main>
 
-   <template>
-<div><img src="img/SVG/sjaelland.png"></div>
-     <section class="post">
+    <template>
+        <div><img src="img/SVG/sjaelland.png"></div>
+        <section class="post">
 
 
-         <h3 class="titel"></h3>
+            <h3 class="titel"></h3>
 
-         <br>
-         <p class="indhold1"></p>
-         <p class="indhold22"></p>
-         <p class="indhold3"></p><br>
-         <p>Korsnæbsvej 60, 4673 Rødvig Stevns</p>
-         <h3 class="titel2"></h3>
-         <p class="indhold4"></p>
-         <p class="indhold5"></p>
-         <p class="indhold6"></p>
-         <p>Højerup Bygade 39, 4660 Store Heddinge</p><br>
-         <h3 class="titel3"></h3>
-         <p class="indhold7"></p>
-         <p class="indhold8"></p><br>
-         <p>Østervej 2, 4640 Faxe</p>
-
-
+            <br>
+            <p class="indhold1"></p>
+            <p class="indhold22"></p>
+            <p class="indhold3"></p><br>
+            <p>Korsnæbsvej 60, 4673 Rødvig Stevns</p>
+            <h3 class="titel2"></h3>
+            <p class="indhold4"></p>
+            <p class="indhold5"></p>
+            <p class="indhold6"></p>
+            <p>Højerup Bygade 39, 4660 Store Heddinge</p><br>
+            <h3 class="titel3"></h3>
+            <p class="indhold7"></p>
+            <p class="indhold8"></p><br>
+            <p>Østervej 2, 4640 Faxe</p>
 
 
-     </section>
- </template>
 
 
-            <footer>
+        </section>
+    </template>
+
+
+    <footer>
         <div class="social"><a href="YOUR FACEBOOK URL">
-<img src="img/SVG/facebook-icon.svg">
-</a>
-<a href="YOUR INSTAGRAM URL">
-<img src="img/SVG/instagram-icon.svg">
-</a>
-<a href="YOUR TWITTER URL">
-<img src="img/SVG/twitter-icon.svg">
-</a>
-</div>
+                <img src="img/SVG/facebook-icon.svg" alt="Facebook ikon">
+            </a>
+            <a href="YOUR INSTAGRAM URL">
+                <img src="img/SVG/instagram-icon.svg" alt="Instagram ikon">
+            </a>
+            <a href="YOUR TWITTER URL">
+                <img src="img/SVG/twitter-icon.svg" alt="Twitter ikon">
+            </a>
+        </div>
 
 
     </footer>
@@ -202,13 +202,13 @@
 
 
     <script>
- let indhold;
+        let indhold;
         document.addEventListener("DOMContentLoaded", hentJson);
         //Hent JSON fil i asynkron function
 
         async function hentJson() {
             console.log("Henter json");
-             const url = "http://nicklasgrafisk.dk/kea/07-CMS/kalklandet/wordpress/wp-json/wp/v2/bningstider";
+            const url = "http://nicklasgrafisk.dk/kea/07-CMS/kalklandet/wordpress/wp-json/wp/v2/bningstider";
 
             // Henter data filen
             const myJson = await fetch(url);
@@ -252,26 +252,25 @@
             // Viser indholdet
         }
         //Kilde: https://www.w3schools.com/howto/howto_js_navbar_sticky.asp?fbclid=IwAR3wEHxRExqaK8dqWlULXH_Z03_f-no3jIpNaxF0vUrm8nb4PWsVwwuCjlY //
-// When the user scrolls the page, execute myFunction
-window.onscroll = function() {myFunction()};
+        // When the user scrolls the page, execute myFunction
+        window.onscroll = function() {
+            myFunction()
+        };
 
-// Get the navbar
-var navbar = document.getElementById("navbar");
+        // Get the navbar
+        var navbar = document.getElementById("navbar");
 
-// Get the offset position of the navbar
-var sticky = navbar.offsetTop;
+        // Get the offset position of the navbar
+        var sticky = navbar.offsetTop;
 
-// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
-function myFunction() {
-  if (window.pageYOffset >= sticky) {
-    navbar.classList.add("sticky")
-  } else {
-    navbar.classList.remove("sticky");
-  }
-}
-
-
-
+        // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+        function myFunction() {
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky")
+            } else {
+                navbar.classList.remove("sticky");
+            }
+        }
 
     </script>
 </body>
