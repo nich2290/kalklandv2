@@ -5,81 +5,70 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
-    <title>Stevns Klint</title>
+    <title>Koldkrigsmuseum Stevnsfort</title>
 
     <style>
 
         /* Scrollbar Handle */
 ::-webkit-scrollbar-thumb {
-    background: #0082AC;
+    background: #54A29E;
 }
 
 /* Scrollbar Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: #63ABCA;
+    background: #54A29E;
 }
 
         *::selection {
-    background: #0082AC;
+    background: #54A29E;
     color: white;
+
     }
 
     #splash {
         height: 60vw;
-        background-image: url(img/splashimg/Stevns_Klint_1080.jpg);
+        background-image: url(img/splashimg/Stevns_Fort_1080.jpg);
         background-size: cover;
         background-repeat: no-repeat;
 
     }
 
-h2, h1 {
-        color: #0082AC;
-    }
-    footer {
-        background-color: #0082AC;
-    }
-    nav ul li a:hover {
-        color: #0082AC;    }
-    .kontaktnav {
-        color: #0082AC;
-    }
-    #menuToggle span {
-        background-color: #0082AC;
-    }
-    #menu {
-        background-color: #0082AC;
-    }
-    .post {
-        margin-bottom: 1rem;
-    }
 
-    #mainwrap {
-
-
-
-    }
     .column_left{
        grid-column: 1;
         grid-row: 1;
         padding: 0 1.5rem 0 1.5rem;
-        margin-bottom: 2vh;
-    }
 
-    .column_left img {
-        width: 100%;
+
     }
     .column_right {
         grid-column: 1;
         grid-row: 2;
 
         padding: 0 1.5rem 0 1.5rem;
-
     }
-    #mainwrap img{
-
+    h2, h1 {
+        color: #54A29E;
     }
-                  .button1 {
-            background-color: #0082AC;
+    footer {
+        background-color: #54A29E;
+    }
+    nav ul li a:hover {
+        color: #54A29E;    }
+    .kontaktnav {
+        color: #54A29E;
+    }
+    #menuToggle span {
+        background-color: #54A29E;
+    }
+    #menu {
+        background-color: #54A29E;
+    }
+    .post:nth-child(2) {
+            margin-bottom: 1rem;
+        }
+        .button1 {
+            background-color: #55798E;
     border: none;
     color: white;
     padding: 16px 32px;
@@ -95,14 +84,17 @@ h2, h1 {
 }
         .button:hover {
     background-color: white;
-    border-color: #0082AC;
-    color: #0082AC;
-    border: 2px solid #0082AC;
+    border-color: #55798E;;
+    color: #55798E;;
+    border: 2px solid #55798E;;
 }
         #buttonwrap {
             text-align: center;
         }
+        #mainwrap img {
+            width: 100%;
 
+        }
     @media only screen and (min-width: 667px){
 
 
@@ -122,13 +114,26 @@ h2, h1 {
             grid-template-columns: 1fr 1fr;
             grid-template-rows: 1fr;
             margin: 0 5rem 0 5rem;
+
+
+
         }
+        #mainwrap img {
+            width: 170%;
 
 
+        }
+        #main h1  {
+            margin-top: 5rem;
+        }
         .column_left{
             grid-column: 1;
             grid-row: 1;
+            margin-bottom: 2vh;
 
+        }
+        .pogbh2 {
+            padding-bottom: 0;
         }
         .column_right {
            grid-column: 2;
@@ -136,8 +141,10 @@ h2, h1 {
         }
 
         .wrap {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr;
             margin: 0 5rem 0 5rem;
-            margin-bottom: 1rem;
         }
         .post {
         padding: 0 1.5rem 0 1.5rem;
@@ -145,17 +152,28 @@ h2, h1 {
         margin-right: 0 !important;
 
         }
-    }
+        .wrap {
+            margin-top: 1rem;
+        }
 
-
+        .post:nth-child(1) {
+            grid-column: 1;
+            grid-row: 1;
+            margin-bottom: 1rem;
+        }
+        .post:nth-child(2) {
+            grid-column: 2;
+            grid-row: 1;
+        }
 
 </style>
 </head>
 
+
 <body>
     <header>
         <nav id="navbar">
-            <a href="index.html"><img class="logo" src="img/SVG/nytlogo-stevnsklint.svg" alt="Kalklandet logo"></a>
+            <a href="index.html"><img class="logo" src="img/SVG/nytlogo-geo.svg" alt="Kalklandet logo"></a>
             <div id="menuToggle">
                 <!-- Skjult checkbox = click reciever-->
                 <input type="checkbox" />
@@ -191,56 +209,19 @@ h2, h1 {
     </header>
 
     <!-- Her starter indhold -->
-    <section id="splash">
 
-    </section>
     <section id="main">
-        <h1>Stevns Klint UNESCO verdensarv</h1>
+        <h1>Geomuseum Faxe</h1>
         <div id="mainwrap">
+    <img src="img/geobook.png">
 
-            <div class="column_left">
-                <img src="img/kirke_stevnsklint.jpg" alt="Kirke Stevns Klint">
-            </div>
-
-            <div class="column_right">
-                <h4>Stevns Klint er blevet optaget på UNESCO's liste over verdensarv, fordi et dramatisk kapitel i Jordens historie gemmer sig i klinten. Et ganske tyndt lag af Fiskeler fortæller historien om, hvordan dinosaurerne og halvdelen af alle dyrearter blev udslettet for 66 millioner år siden, da en asteroide ramte Jorden. Besøg Stevns Klint i Højerup, der er det bedste sted i verden at se det dramatiske lag.</h4>
-                <p>Men Stevns Klints smukke natur rummer også et væld af andre historier og oplevelser. Gå langs klinten på en cirka 20 km lang sti, der forbinder Stevns Klints højdepunkter.</p><br>
-                <p>For ca. 30 år siden rystede en ny teori videnskabens verden. Teorien om en kæmpemeteor, der udryddede ca. halvdelen af alt liv på jorden for cirka 65 mio. år siden. Udgangspunktet for dette feltforløb er historien om, hvordan forskeren Walter Alvarez kom frem til den revolutionerende idé gennem sit geologiske arbejde.</p><br>
-                <p>På klinten arbejder vi med feltmetoden profiltegning. Vi arbejder konkret med geologiske observationer og bjergartsundersøgelser. Eleverne arbejder selvstændigt med at skitsere klinten og derefter opmåle de geologiske lag og indtegne dem på rigtige profiler. Den geologiske tidsskala konkretiseres, når lag fra forskellige tidsperioder markeres på profilet.</p>
-            </div>
 
         </div>
 
-
     </section>
-    <h2 class="pogbh2">Priser og booking</h2>
-    <main class="posts wrap"></main>
-
-    <template>
-
-        <section class="post">
-
-
-            <h3 class="underrubrik"></h3>
-            <p class="info1"></p>
-            <br>
-            <p class="info2"></p>
-            <br>
-            <p class="indhold1"></p>
-            <p class="pris"></p>
-            <p class="indhold3"></p>
-            <p class="indhold4"></p>
 
 
 
-
-        </section>
-    </template>
-    <div id="buttonwrap">
-       <a href="stevnsklintbook.html">
-        <button class="button button1">Book</button>
-        </a>
-    </div>
     <!--- HER STARTER FOOTER -->
 
     <footer>
@@ -260,6 +241,10 @@ h2, h1 {
 
 
 
+
+
+
+
     <script>
         let indhold;
         document.addEventListener("DOMContentLoaded", hentJson);
@@ -267,7 +252,7 @@ h2, h1 {
 
         async function hentJson() {
             console.log("Henter json");
-            const url = "http://nicklasgrafisk.dk/kea/07-CMS/kalklandet/wordpress/wp-json/wp/v2/booking_stevnsklint";
+            const url = "http://nicklasgrafisk.dk/kea/07-CMS/kalklandet/wordpress/wp-json/wp/v2/booking-stevnsfort";
 
             // Henter data filen
             const myJson = await fetch(url);
@@ -293,7 +278,6 @@ h2, h1 {
                 klon.querySelector(".indhold1").innerHTML = post.indhold1;
                 klon.querySelector(".pris").innerHTML = post.indhold2;
                 klon.querySelector(".indhold3").innerHTML = post.indhold3;
-                klon.querySelector(".indhold4").innerHTML = post.indhold4;
 
 
 

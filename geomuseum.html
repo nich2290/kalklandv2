@@ -61,9 +61,7 @@
         }
 
     #mainwrap {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr;
+
 
     }
     .column_left{
@@ -79,6 +77,30 @@
         grid-row: 2;
         padding: 0 1.5rem 0 1.5rem;
     }
+              .button1 {
+            background-color: #54A29E;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    align-self: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+        .button:hover {
+    background-color: white;
+    border-color: #54A29E;
+    color: #54A29E;
+    border: 2px solid #54A29E;
+}
+        #buttonwrap {
+            text-align: center;
+        }
 
     @media only screen and (min-width: 1024px){
         #splash {
@@ -230,6 +252,11 @@
 
         </section>
     </template>
+    <div id="buttonwrap">
+    <a href="geofaxebook.html">
+    <button class="button button1">Book</button>
+    </a>
+    </div>
 
     <!--- HER STARTER FOOTER -->
 
