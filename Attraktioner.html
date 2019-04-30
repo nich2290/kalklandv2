@@ -98,7 +98,131 @@
         }
     /************ TABLET ***********/
     @media only screen and (min-width: 667px){
+      #attraktioner {
+        display: grid;
+        width: 100%;
 
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+            max-height: 80vh;
+    }
+
+        .skjul {
+            opacity: 0;
+        }
+    .attraktion1 img {
+        width: 100%;
+        z-index: -10;
+
+    }
+        .attraktion1 {
+            margin-right: 10px;
+        }
+
+    .attraktion2 img {
+        width: 100%;
+        z-index: -10;
+    }
+
+    .attraktion3 img {
+        width: 100%;
+        z-index: -10;
+
+    }
+
+
+
+    /******** OVERLAY*********/
+    .attraktion1 {
+        position: relative;
+        width: 100%;
+
+    }
+
+    .attraktion2 {
+        position: relative;
+        width: 100%;
+
+    }
+
+    .attraktion3 {
+        position: relative;
+        width: 100%;
+    }
+
+    .image {
+        opacity: 1;
+        display: block;
+        width: 100%;
+        height: auto;
+        transition: .5s ease;
+        backface-visibility: hidden;
+    }
+
+    .middle {
+        transition: .5s ease;
+        opacity: 1;
+        position: absolute;
+        top: 50%;
+        left: 70%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        text-align: center;
+    }
+    .middle img{
+        width: 15vw;
+    }
+    .attraktion1:hover .image {
+        opacity: 1;
+
+    }
+
+    .attraktion1:hover .middle {
+        opacity: 1;
+    }
+
+    .attraktion2:hover .image {
+        opacity: 1;
+    }
+
+    .attraktion2:hover .middle {
+        opacity: 1;
+    }
+
+    .attraktion3:hover .image {
+        opacity: 1;
+    }
+
+    .attraktion3:hover .middle {
+        opacity: 1;
+    }
+
+    .middle {
+        cursor: pointer;
+    }
+
+    .text {
+
+        color: white;
+        font-size: 37px;
+
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+        footer {
+    position: fixed;
+
+    width: 100%;
+    height: 10%;
+    background-color: #FE6400;
+    overflow: visible;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+}
 
     }
     /*********** DESKTOP START ***********/
@@ -138,6 +262,9 @@
     }
         .skjul2 {
             display: none;
+        }
+        .skjul {
+            opacity: 1;
         }
 
     /******** OVERLAY*********/
@@ -222,7 +349,7 @@
 
         footer {
     position: fixed;
-    bottom: 0;
+
     width: 100%;
     height: 10%;
     background-color: #FE6400;
