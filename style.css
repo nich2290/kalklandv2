@@ -118,7 +118,12 @@ h3 {
     margin-bottom: 1rem;
     font-family: 'limestonelight';
 }
-
+.hide {
+            opacity: 0;
+        }
+.titel, .titel2, .titel3 {
+    font-size: 1.5rem;
+}
 /************ GENERELT SLUT *************/
 
 /************ NAVIGATION START *************/
@@ -668,10 +673,26 @@ footer {
 
     }
 
+    footer {
+            margin-top: 5rem;
+        }
     .dato {
         margin-right: 1em;
     }
 
+    .hide {
+        opacity: 1;
+    }
+    footer p{
+        margin-top: 2rem;
+        margin-left: 2rem;
+        font-family: 'limestoneregular';
+        color: white;
+        cursor: pointer;
+    }
+    footer p:hover {
+        color: black;
+    }
 
 
 }
