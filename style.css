@@ -650,7 +650,8 @@ footer {
     .social {
         grid-column: 3;
         grid-row: 1;
-        text-align: center;
+        text-align: right;
+        margin-right: 2rem;
 
     }
 
@@ -684,11 +685,23 @@ footer {
         opacity: 1;
     }
     footer p{
-        margin-top: 2rem;
-        margin-left: 2rem;
+
+
+
         font-family: 'limestoneregular';
         color: white;
         cursor: pointer;
+
+
+    }
+    #contact {
+        align-self: center;
+        text-align: left;
+
+        grid-row: 1;
+        grid-column: 1;
+        margin-left: 2rem;
+
     }
     footer p:hover {
         color: black;
