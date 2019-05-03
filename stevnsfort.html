@@ -5,92 +5,80 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
-    <title>Stevns Klint</title>
+    <title>Koldkrigsmuseum Stevnsfort - Attraktioner - Kalklandet.dk</title>
 
-    <link rel="apple-touch-icon" sizes="180x180" href="myiconsklint/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="myiconsklint/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="myiconsklint/favicon-16x16.png">
-<link rel="manifest" href="myiconsklint/site.webmanifest">
-<link rel="mask-icon" href="myiconsklint/safari-pinned-tab.svg" color="#5bbad5">
-<link rel="shortcut icon" href="myiconsklint/favicon.ico">
+   <link rel="apple-touch-icon" sizes="180x180" href="myicons2/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="myicons2/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="myicons2/favicon-16x16.png">
+<link rel="manifest" href="myicons2/site.webmanifest">
+<link rel="mask-icon" href="myicons2/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="myicons2/favicon.ico">
 <meta name="msapplication-TileColor" content="#da532c">
-<meta name="msapplication-config" content="myiconsklint/browserconfig.xml">
+<meta name="msapplication-config" content="myicons2/browserconfig.xml">
 <meta name="theme-color" content="#ffffff">
-
     <style>
 
         /* Scrollbar Handle */
 ::-webkit-scrollbar-thumb {
-    background: #0082AC;
+    background: #55798E;
 }
 
 /* Scrollbar Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: #63ABCA;
+    background: #879EB0;
 }
 
         *::selection {
-    background: #0082AC;
+    background: #55798E;
     color: white;
+
     }
 
     #splash {
         height: 60vw;
-        background-image: url(img/splashimg/Stevns_Klint_1080.jpg);
+        background-image: url(img/splashimg/Stevns_Fort_1080.jpg);
         background-size: cover;
         background-repeat: no-repeat;
 
     }
 
-h2, h1 {
-        color: #0082AC;
-    }
-    footer {
-        background-color: #0082AC;
-    }
-    nav ul li a:hover {
-        color: #0082AC;    }
-    .kontaktnav {
-        color: #0082AC;
-    }
-    #menuToggle span {
-        background-color: #0082AC;
-    }
-    #menu {
-        background-color: #0082AC;
-    }
-    .post {
-        margin-bottom: 1rem;
-    }
 
-    #mainwrap {
-
-
-
-    }
     .column_left{
        grid-column: 1;
         grid-row: 1;
         padding: 0 1.5rem 0 1.5rem;
-        margin-bottom: 2vh;
-    }
 
-    .column_left img {
-        width: 100%;
+
     }
     .column_right {
         grid-column: 1;
         grid-row: 2;
 
         padding: 0 1.5rem 0 1.5rem;
-
     }
-    #mainwrap img{
-
+    h2, h1 {
+        color: #55798E;
     }
-                  .button1 {
-            background-color: #0082AC;
-    border: none;
+    footer {
+        background-color: #55798E;
+    }
+    nav ul li a:hover {
+        color: #55798E;    }
+    .kontaktnav {
+        color: #55798E;
+    }
+    #menuToggle span {
+        background-color: #55798E;
+    }
+    #menu {
+        background-color: #55798E;
+    }
+    .post:nth-child(2) {
+            margin-bottom: 1rem;
+        }
+        .button1 {
+            background-color: #55798E;;
+    border: 2px  solid white;
     color: white;
     padding: 16px 32px;
     text-align: center;
@@ -105,14 +93,13 @@ h2, h1 {
 }
         .button:hover {
     background-color: white;
-    border-color: #0082AC;
-    color: #0082AC;
-    border: 2px solid #0082AC;
+    border-color: #55798E;;
+    color: #55798E;;
+    border: 2px solid #55798E;;
 }
         #buttonwrap {
             text-align: center;
         }
-
     @media only screen and (min-width: 667px){
 
 
@@ -125,6 +112,7 @@ h2, h1 {
     @media only screen and (min-width: 1024px){
         #splash {
             height: 30vw;
+            background-position: 50% 11%;
         }
 
         #mainwrap {
@@ -138,7 +126,11 @@ h2, h1 {
         .column_left{
             grid-column: 1;
             grid-row: 1;
+            margin-bottom: 2vh;
 
+        }
+        .pogbh2 {
+            padding-bottom: 0;
         }
         .column_right {
            grid-column: 2;
@@ -146,8 +138,10 @@ h2, h1 {
         }
 
         .wrap {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr;
             margin: 0 5rem 0 5rem;
-            margin-bottom: 1rem;
         }
         .post {
         padding: 0 1.5rem 0 1.5rem;
@@ -155,20 +149,31 @@ h2, h1 {
         margin-right: 0 !important;
 
         }
+        .wrap {
+            margin-top: 1rem;
+        }
+
+        .post:nth-child(1) {
+            grid-column: 1;
+            grid-row: 1;
+            margin-bottom: 1rem;
+        }
+        .post:nth-child(2) {
+            grid-column: 2;
+            grid-row: 1;
+        }
         #undervisning {
             margin: 0 5rem 0 5rem;
         }
-    }
-
-
 
 </style>
 </head>
 
+
 <body>
     <header>
         <nav id="navbar">
-            <a href="index.html"><img class="logo" src="img/SVG/nytlogo-stevnsklint.svg" alt="Kalklandet logo"></a>
+            <a href="index.html"><img class="logo" src="img/SVG/nytlogo-stevnsfort.svg" alt="Kalklandet logo"></a>
             <div id="menuToggle">
                 <!-- Skjult checkbox = click reciever-->
                 <input type="checkbox" />
@@ -208,18 +213,22 @@ h2, h1 {
 
     </section>
     <section id="main">
-        <h1>Stevns Klint UNESCO verdensarv</h1>
+        <h1>Koldkrigsmuseum Stevnsfort</h1>
         <div id="mainwrap">
 
             <div class="column_left">
-                <img src="img/kirke_stevnsklint.jpg" alt="Kirke Stevns Klint">
+                <img src="img/granat_stevnsfort.jpg" alt="Granat Stevnsfort">
             </div>
 
             <div class="column_right">
-                <h4>Stevns Klint er blevet optaget på UNESCO's liste over verdensarv, fordi et dramatisk kapitel i Jordens historie gemmer sig i klinten. Et ganske tyndt lag af Fiskeler fortæller historien om, hvordan dinosaurerne og halvdelen af alle dyrearter blev udslettet for 66 millioner år siden, da en asteroide ramte Jorden. Besøg Stevns Klint i Højerup, der er det bedste sted i verden at se det dramatiske lag.</h4>
-                <p>Men Stevns Klints smukke natur rummer også et væld af andre historier og oplevelser. Gå langs klinten på en cirka 20 km lang sti, der forbinder Stevns Klints højdepunkter.</p><br>
-                <p>For ca. 30 år siden rystede en ny teori videnskabens verden. Teorien om en kæmpemeteor, der udryddede ca. halvdelen af alt liv på jorden for cirka 65 mio. år siden. Udgangspunktet for dette feltforløb er historien om, hvordan forskeren Walter Alvarez kom frem til den revolutionerende idé gennem sit geologiske arbejde.</p><br>
-                <p>På klinten arbejder vi med feltmetoden profiltegning. Vi arbejder konkret med geologiske observationer og bjergartsundersøgelser. Eleverne arbejder selvstændigt med at skitsere klinten og derefter opmåle de geologiske lag og indtegne dem på rigtige profiler. Den geologiske tidsskala konkretiseres, når lag fra forskellige tidsperioder markeres på profilet.</p>
+                <h4>Den Kolde Krig påvirkede enhver, der levede i perioden. På Koldkrigsmuseum Stevnsfort minder vi dig om en historie, som du måske kan huske, men slet ikke kender.</h4>
+                <p>Under Den Kolde Krig var Stevnsfort en brik i Danmarks og NATO’s forsvar. Halvøen Stevns ville ligge i allerforreste frontlinje, hvis der udbrød krig mellem øst og vest. Derfor byggede man Stevnsfort, og i 40 år var man her døgnet rundt klar til krig.</p><br>
+                <p>I dag kan du på en guidet tur opleve det underjordiske fort, som det så ud dengang, da krigen var tættest på. Ethvert besøg på fortet er en ny og særlig oplevelse. I selskab med en af museets 20 engagerede og forskellige guider får du nærværende og levende fortællinger om den allestedsnærværende krig i en unik og autentisk ramme. </p> <br>
+                <p>Stevnsfort er med sine 1,7 km gange hugget ud i kalken et fantastisk bygningsværk. Det er samtidig et meget kompliceret bygningsværk, der er bygget til at kunne modstå atomangreb og kunne fortsætte sine funktioner uden forbindelse til omverdenen i månedsvis.</p> <br>
+                <p>
+                    Fortet rummer i hundredevis af rum, gange og kanaler med særlige funktioner og tekniske installationer. Kun en lille del af disse rum er normalt tilgængelige for museets gæster. På den 2 timer lange specialtur i undergrunden ser I en del af disse rum og får et langt mere detaljeret indblik i, hvordan fortet skulle fungere i en krigssituation.</p><br>
+                <p>Stevnsfort og Den Kolde Krig rummer masser af spændende og ukendte historier om en periode, hvor krigstruslen påvirkede hele samfundet. Museet kan skræddersy specialture til grupper med særlige interesser for historie, teknik eller fantastiske oplevelser. Kontakt os for yderligere information.</p>
+
             </div>
 
         </div>
@@ -242,7 +251,6 @@ h2, h1 {
             <p class="indhold1"></p>
             <p class="pris"></p>
             <p class="indhold3"></p>
-            <p class="indhold4"></p>
 
 
 
@@ -250,11 +258,11 @@ h2, h1 {
         </section>
     </template>
     <div id="buttonwrap">
-       <a href="stevnsklintbook.html">
-        <button class="button button1">Book</button>
-        </a>
+    <a href="stevnsfortbook.html">
+    <button class="button1 button">Book</button>
+    </a>
     </div>
-        <h2>Undervisning</h2>
+    <h2>Undervisning</h2>
     <section id="undervisning">
     <div>
         <p class="post">Kalklandets forskellige undervisningstilbud gør det til et oplagt sted at tage på et heldagsbesøg eller lejrskoleophold og deltage i flere undervisningsforløb indenfor naturfag, samfundsfag og historie.</p>
@@ -266,6 +274,7 @@ h2, h1 {
 
 
 </section>
+
     <!--- HER STARTER FOOTER -->
 
     <footer>
@@ -290,6 +299,10 @@ h2, h1 {
 
 
 
+
+
+
+
     <script>
         let indhold;
         document.addEventListener("DOMContentLoaded", hentJson);
@@ -297,7 +310,7 @@ h2, h1 {
 
         async function hentJson() {
             console.log("Henter json");
-            const url = "http://nicklasgrafisk.dk/kea/07-CMS/kalklandet/wordpress/wp-json/wp/v2/booking_stevnsklint";
+            const url = "http://nicklasgrafisk.dk/kea/07-CMS/kalklandet/wordpress/wp-json/wp/v2/booking-stevnsfort";
 
             // Henter data filen
             const myJson = await fetch(url);
@@ -323,7 +336,6 @@ h2, h1 {
                 klon.querySelector(".indhold1").innerHTML = post.indhold1;
                 klon.querySelector(".pris").innerHTML = post.indhold2;
                 klon.querySelector(".indhold3").innerHTML = post.indhold3;
-                klon.querySelector(".indhold4").innerHTML = post.indhold4;
 
 
 
