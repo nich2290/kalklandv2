@@ -47,6 +47,7 @@ html {
 
 }
 
+/* Denne CSS kode gør at baggrundfarven skifter ved markering af tekst, så den matcher vores farve-tema. */
 *::selection {
     background: #FE6400;
     color: white;
