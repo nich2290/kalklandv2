@@ -160,6 +160,9 @@ h2, h1 {
         #undervisning {
             margin: 0 5rem 0 5rem;
         }
+        .aabningstider {
+            text-align: center;
+        }
     }
 
 
@@ -258,7 +261,7 @@ h2, h1 {
     </div>
         <h2>Undervisning</h2>
     <section id="undervisning">
-    <div>
+    <div class="centrer">
         <p class="post">Kalklandets forskellige undervisningstilbud gør det til et oplagt sted at tage på et heldagsbesøg eller lejrskoleophold og deltage i flere undervisningsforløb indenfor naturfag, samfundsfag og historie.</p>
         <p class="post">​Vores undervisningstilbud kan kombineres med oplevelser på egen hånd med besøg på Stevns Klint eller ved Stevns fyr, gåture langs klinten og andet friluftsliv.</p>
         <p class="post">Kontakt os:</p>
@@ -268,6 +271,16 @@ h2, h1 {
 
 
 </section>
+  <h2>Åbningstider</h2>
+   <section class="aabningstider">
+       <div class="centrer">
+       <p class="paragraf4"></p>
+       <br>
+       <p class="paragraf5"></p>
+       <br>
+       <p class="paragraf6"></p>
+       </div>
+   </section>
     <!--- HER STARTER FOOTER -->
 
     <footer>
@@ -276,13 +289,13 @@ h2, h1 {
        <p class="hide show">Kontakt</p>
        </a>
        </div>
-        <div class="social"><a href="YOUR FACEBOOK URL">
+        <div class="social"><a href="https://www.facebook.com/stevnsklint/">
                 <img src="img/SVG/facebook-icon.svg" alt="Facebook ikon">
             </a>
-            <a href="YOUR INSTAGRAM URL">
+            <a href="https://www.instagram.com/oestsjaellandsmuseum/">
                 <img src="img/SVG/instagram-icon.svg" alt="Instagram ikon">
             </a>
-            <a href="YOUR TWITTER URL">
+            <a href="https://twitter.com/Stevnsfort">
                 <img src="img/SVG/twitter-icon.svg" alt="Twitter ikon">
             </a>
         </div>
@@ -294,17 +307,21 @@ h2, h1 {
 
     <script>
         let indhold;
+        let indhold2;
         document.addEventListener("DOMContentLoaded", hentJson);
         //Hent JSON fil i asynkron function
 
         async function hentJson() {
             console.log("Henter json");
             const url = "http://nicklasgrafisk.dk/kea/07-CMS/kalklandet/wordpress/wp-json/wp/v2/booking_stevnsklint";
+            const url2 ="http://nicklasgrafisk.dk/kea/07-CMS/kalklandet/wordpress/wp-json/wp/v2/bningstider/84";
 
             // Henter data filen
             const myJson = await fetch(url);
+            const myJson2 = await fetch (url2);
             // den hentede data skal tolkes som json
             indhold = await myJson.json();
+            indhold2 = await myJson2.json();
             //Kald funktion der viser data i DOM
             visIndhold();
 
@@ -334,6 +351,10 @@ h2, h1 {
 
 
             // Viser indholdet
+
+            document.querySelector(".paragraf4").textContent = indhold2.indhold7;
+            document.querySelector(".paragraf5").textContent = indhold2.indhold8;
+            document.querySelector(".paragraf6").textContent = indhold2.indhold9;
         }
         //document.querySelector(".overskrift").innerHTML = indhold.titel;
         //document.querySelector(".indhold").innerHTML = indhold.indhold1;

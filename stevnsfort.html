@@ -166,6 +166,9 @@
         #undervisning {
             margin: 0 5rem 0 5rem;
         }
+        .aabningstider {
+            text-align: center;
+        }
 
 </style>
 </head>
@@ -265,7 +268,7 @@
     </div>
     <h2>Undervisning</h2>
     <section id="undervisning">
-    <div>
+    <div class="centrer">
         <p class="post">Kalklandets forskellige undervisningstilbud gør det til et oplagt sted at tage på et heldagsbesøg eller lejrskoleophold og deltage i flere undervisningsforløb indenfor naturfag, samfundsfag og historie.</p>
         <p class="post">​Vores undervisningstilbud kan kombineres med oplevelser på egen hånd med besøg på Stevns Klint eller ved Stevns fyr, gåture langs klinten og andet friluftsliv.</p>
         <p class="post">Kontakt os:</p>
@@ -275,22 +278,31 @@
 
 
 </section>
-
+<h2>Åbningstider</h2>
+<section class="aabningstider">
+   <div class="centrer">
+   <p class="paragraf1"></p>
+   <br>
+   <p class="paragraf2"></p>
+   <br>
+   <p class="paragraf3"></p>
+    </div>
+</section>
     <!--- HER STARTER FOOTER -->
 
-    <footer>
+   <footer>
       <div id="contact">
        <a href="kontakt.html">
        <p class="hide show">Kontakt</p>
        </a>
        </div>
-        <div class="social"><a href="YOUR FACEBOOK URL">
+        <div class="social"><a href="https://www.facebook.com/stevnsklint/">
                 <img src="img/SVG/facebook-icon.svg" alt="Facebook ikon">
             </a>
-            <a href="YOUR INSTAGRAM URL">
+            <a href="https://www.instagram.com/oestsjaellandsmuseum/">
                 <img src="img/SVG/instagram-icon.svg" alt="Instagram ikon">
             </a>
-            <a href="YOUR TWITTER URL">
+            <a href="https://twitter.com/Stevnsfort">
                 <img src="img/SVG/twitter-icon.svg" alt="Twitter ikon">
             </a>
         </div>
@@ -303,20 +315,24 @@
 
 
 
-
     <script>
         let indhold;
+        let indhold2;
         document.addEventListener("DOMContentLoaded", hentJson);
         //Hent JSON fil i asynkron function
 
         async function hentJson() {
             console.log("Henter json");
             const url = "http://nicklasgrafisk.dk/kea/07-CMS/kalklandet/wordpress/wp-json/wp/v2/booking-stevnsfort";
+            const url2 = "http://nicklasgrafisk.dk/kea/07-CMS/kalklandet/wordpress/wp-json/wp/v2/bningstider/84";
 
             // Henter data filen
             const myJson = await fetch(url);
+
+            const myJson2 = await fetch(url2);
             // den hentede data skal tolkes som json
             indhold = await myJson.json();
+            indhold2 = await myJson2.json();
             //Kald funktion der viser data i DOM
             visIndhold();
 
@@ -345,6 +361,12 @@
 
 
             // Viser indholdet
+
+
+            document.querySelector(".paragraf1").textContent = indhold2.indhold1;
+            document.querySelector(".paragraf2").textContent = indhold2.indhold2;
+            document.querySelector(".paragraf3").textContent = indhold2.indhold3;
+
         }
         //document.querySelector(".overskrift").innerHTML = indhold.titel;
         //document.querySelector(".indhold").innerHTML = indhold.indhold1;
