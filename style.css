@@ -119,16 +119,21 @@ h3 {
     margin-bottom: 1rem;
     font-family: 'limestonelight';
 }
+
 .hide {
-            opacity: 0;
-        }
-.titel, .titel2, .titel3 {
+    opacity: 0;
+}
+
+.titel,
+.titel2,
+.titel3 {
     font-size: 1.5rem;
 }
 
 .aabningstider {
     margin-bottom: 1.5rem;
 }
+
 /************ GENERELT SLUT *************/
 
 /************ NAVIGATION START *************/
@@ -623,6 +628,7 @@ footer {
 
     #navbar {
         text-align: center;
+        z-index: 3;
     }
 
     .logo {
@@ -687,12 +693,14 @@ footer {
     }
 
     footer {
-            margin-top: 5rem;
-        }
+        margin-top: 5rem;
+    }
+
     footer img:hover {
         width: 12%;
         transition: 0.2s;
     }
+
     .dato {
         margin-right: 1em;
     }
@@ -700,7 +708,8 @@ footer {
     .hide {
         opacity: 1;
     }
-    footer p{
+
+    footer p {
 
 
 
@@ -710,6 +719,7 @@ footer {
 
 
     }
+
     #contact {
         align-self: center;
         text-align: left;
@@ -719,10 +729,12 @@ footer {
         margin-left: 2rem;
 
     }
+
     footer p:hover {
         font-size: 1.1rem;
         transition: 0.2s;
     }
+
     .aabningstider {
         margin-left: 10vh;
         margin-right: 10vh;
@@ -730,15 +742,18 @@ footer {
         margin-top: 1.5rem;
 
     }
+
     #undervisning .post {
         max-width: 900px;
 
     }
+
     #undervisning {
         text-align: center;
     }
+
     .centrer {
-        display:inline-block;
+        display: inline-block;
         text-align: left;
 
     }
